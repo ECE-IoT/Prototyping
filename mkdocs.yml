@@ -1,19 +1,14 @@
-site_name: Code References - Controller
+site_name: Prototyping
 nav:
-  - Home: https://4d-game.github.io
-  - Coding Style: https://4d-game.github.io/coding-style/cpp/
-  - Code References:
-      Streamer: https://4d-game.github.io/Streamer/
-      Controller: index.md
-      Watcherstream: https://4d-game.github.io/Watcherstream/
+  - Home: https://ece-iot.github.io/Prototyping/
 
-repo_url: https://github.com/4D-Game/Controller
+repo_url: https://github.com/ECE-IoT/Prototyping
 
 theme:
   name: material
   language: en
-  logo: assets/logo.png
-  favicon: assets/logo.png
+  logo: docs/assets/logo.png
+  favicon: docs/assets/logo.png
   features:
     - navigation.tabs
     - navigation.top

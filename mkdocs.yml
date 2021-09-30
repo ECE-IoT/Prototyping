@@ -1,4 +1,4 @@
-site_name: Prototyping
+site_name: ECE-IoT Prototyping
 nav:
   - Home: https://ece-iot.github.io/Prototyping/
 
@@ -7,27 +7,30 @@ repo_url: https://github.com/ECE-IoT/Prototyping
 theme:
   name: material
   language: en
-  logo: docs/assets/logo.png
-  favicon: docs/assets/logo.png
+  logo: assets/logo.png
+  favicon: assets/logo.png
   features:
     - navigation.tabs
     - navigation.top
   palette:
     - scheme: default
-      primary: light blue
+      primary: indigo
       toggle:
-        icon: material/toggle-switch-off-outline
+        icon: material/weather-night
         name: Switch to dark mode
     - scheme: slate
-      primary: light blue
+      primary: indigo
       toggle:
-        icon: material/toggle-switch
+        icon: material/weather-sunny
         name: Switch to light mode
 
 plugins:
   - search
+  - git-revision-date
   - mkdocstrings
 
 markdown_extensions:
+  - def_list
+  - attr_list
   - pymdownx.highlight
   - pymdownx.superfences

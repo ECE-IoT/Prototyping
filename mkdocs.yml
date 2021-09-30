@@ -1,6 +1,13 @@
 site_name: ECE-IoT Prototyping
 nav:
-  - Home: https://ece-iot.github.io/Prototyping/
+  - Home: index.md
+  - Tutorials:
+      - C++: tutorials/cpp-coding-style.md
+      - Git: tutorials/git-commit-style.md
+      - Prototyping Guide: tutorials/prototyping-guide.md
+  - Documentation:
+      - AWS:
+          - MQTT: src/aws/mqtt/doc-mqtt.md
 
 repo_url: https://github.com/ECE-IoT/Prototyping
 
@@ -30,7 +37,12 @@ plugins:
   - mkdocstrings
 
 markdown_extensions:
+  - footnotes
   - def_list
   - attr_list
   - pymdownx.highlight
   - pymdownx.superfences
+  - pymdownx.smartsymbols
+  - pymdownx.critic
+  - pymdownx.tasklist:
+      custom_checkbox: true

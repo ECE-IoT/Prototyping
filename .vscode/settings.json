@@ -1,7 +1,12 @@
 {
     "cSpell.words": [
+        "Arduinos",
         "favicon",
+        "microcontrollers",
+        "MQTT",
         "pymdownx",
-        "superfences"
+        "smartsymbols",
+        "superfences",
+        "tasklist"
     ]
 }

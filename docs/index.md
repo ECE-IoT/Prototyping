@@ -1,17 +1,15 @@
-# Welcome to MkDocs
+# Prototyping Documentation
+This documentations intention is to get a depth sight into everything discoverd while playing around with Arduinos, other microcontrollers and IoT Cloud Systems. 
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+For prototyping purposes a [**PlatformIO**](https://platformio.org) project has been created. The repository can be *cloned* by using the following link
 
-## Commands
+```
+https://github.com/ECE-IoT/Prototyping.git
+```
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+---
+Here is the:
 
-## Project layout
+> [**Prototyping Guide**](tutorials/prototyping-guide.md) 
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+which helps to set up everything correctly. When everything is configured as shown, the documentation of the prototyping phase should be easy and intuitive. 

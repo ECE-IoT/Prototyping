@@ -146,7 +146,8 @@ If the section of code is not clearly understandable there should be a short des
 *Example {==DON'T==}*
 ```cpp
 // divides up two double values
-double division(double dividend, double divisor){
+double division(double dividend, double divisor)
+{
    // this is the result variable
    double div; 
    // the result is calculated here:

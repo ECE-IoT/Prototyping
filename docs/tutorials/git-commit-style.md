@@ -47,7 +47,12 @@ With this command all local pulled branches will be displayed in the shell. The 
 git branch
 ```
 
+**Switch Branches**
 
+In order to switch different branches this command can be used
+```bash
+git checkout <desired branch>
+```
 
 **Add**
 

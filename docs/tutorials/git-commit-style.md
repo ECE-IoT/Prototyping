@@ -29,6 +29,49 @@ Commit
 
 For a more in-depth look have a look at the website: [codeburst.io](https://codeburst.io/git-and-github-in-a-nutshell-b0a3cc06458f)
 
+### Basic Commands
+
+There are some basic commands that should be mastered right away when working with `git`. 
+
+**Clone**
+
+With this command a repository with the suited `link` is cloned into the `.` directory. 
+```bash
+git clone <link> . 
+```
+
+**Branch**
+
+With this command 
+
+**Add**
+
+This command is need to add new changes to a commit from the `.` directory.
+```bash
+git add . 
+```
+
+**Commit**
+
+With this command the changes are ported to the repository and added to the version control
+```bash
+git commit -m "SUITABLE MESSAGE"
+```
+
+**Push**
+
+With this command the changes are uploaded to the remote repository
+```bash
+git push
+```
+
+**Pull**
+
+With this command new changes are downloaded to the local repository
+```bash
+git pull
+```
+
 ## Commit Style 
 
 In order to achieve a uniform naming for commit messages the following **commit style** should be used when creating a new commit message. 

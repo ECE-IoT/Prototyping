@@ -42,7 +42,12 @@ git clone <link> .
 
 **Branch**
 
-With this command 
+With this command all local pulled branches will be displayed in the shell. The current branch is marked in a certain color. 
+```bash
+git branch
+```
+
+
 
 **Add**
 

@@ -407,6 +407,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#basic-commands" class="md-nav__link">
+    Basic Commands
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -576,6 +583,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#basic-commands" class="md-nav__link">
+    Basic Commands
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -626,6 +640,36 @@
 <dd>That's the default (initial) development branch. It's automatically created at the birth of the Repo. The master branch is usually used for merging the final result of a project together. </dd>
 </dl>
 <p>For a more in-depth look have a look at the website: <a href="https://codeburst.io/git-and-github-in-a-nutshell-b0a3cc06458f">codeburst.io</a></p>
+<h3 id="basic-commands">Basic Commands</h3>
+<p>There are some basic commands that should be mastered right away when working with <code>git</code>. </p>
+<p><strong>Clone</strong></p>
+<p>With this command a repository with the suited <code>link</code> is cloned into the <code>.</code> directory. 
+<div class="highlight"><pre><span></span><code>git clone &lt;link&gt; . 
+</code></pre></div></p>
+<p><strong>Branch</strong></p>
+<p>With this command all local pulled branches will be displayed in the shell. The current branch is marked in a certain color. 
+<div class="highlight"><pre><span></span><code>git branch
+</code></pre></div></p>
+<p><strong>Switch Branches</strong></p>
+<p>In order to switch different branches this command can be used
+<div class="highlight"><pre><span></span><code>git checkout &lt;desired branch&gt;
+</code></pre></div></p>
+<p><strong>Add</strong></p>
+<p>This command is need to add new changes to a commit from the <code>.</code> directory.
+<div class="highlight"><pre><span></span><code>git add . 
+</code></pre></div></p>
+<p><strong>Commit</strong></p>
+<p>With this command the changes are ported to the repository and added to the version control
+<div class="highlight"><pre><span></span><code>git commit -m <span class="s2">&quot;SUITABLE MESSAGE&quot;</span>
+</code></pre></div></p>
+<p><strong>Push</strong></p>
+<p>With this command the changes are uploaded to the remote repository
+<div class="highlight"><pre><span></span><code>git push
+</code></pre></div></p>
+<p><strong>Pull</strong></p>
+<p>With this command new changes are downloaded to the local repository
+<div class="highlight"><pre><span></span><code>git pull
+</code></pre></div></p>
 <h2 id="commit-style">Commit Style</h2>
 <p>In order to achieve a uniform naming for commit messages the following <strong>commit style</strong> should be used when creating a new commit message. </p>
 <table>
@@ -666,7 +710,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-09-30
+      Last update: 2021-10-07
     
   </small>
 </div>

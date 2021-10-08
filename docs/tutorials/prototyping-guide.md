@@ -16,6 +16,6 @@ For every new category there should be a appropriate `sub-file-tree` where corre
 
 The documentation part ist done in the tree part `/docs/src/`
 
-![src-docs](docs/assets/src-docs.png)
+![src-docs](/docs/assets/src-docs.png)
 
 Here a mirror directory of the `/src/` is created. That simplifies the overall visual structure. In the corresponding `sub-folder`, *eg.* `/docs/src/aws/mqtt` the necessary **MARKDOWN** `.md` needs to be stored. The Markdown file is used to record all necessary information about the finished prototyping.

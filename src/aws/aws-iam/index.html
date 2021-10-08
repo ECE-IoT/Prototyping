@@ -9,19 +9,19 @@
       
       
       
-      <link rel="icon" href="../../../../assets/logo.png">
+      <link rel="icon" href="../../../assets/logo.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.0">
     
     
       
-        <title>MQTT - ECE-IoT Prototyping</title>
+        <title>Identity and Access Management - ECE-IoT Prototyping</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.8b42a75e.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8b42a75e.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.3f5d1f46.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f5d1f46.min.css">
         
       
     
@@ -36,7 +36,7 @@
     
     
     
-      <link rel="stylesheet" href="../../../../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
     
     
       
@@ -57,7 +57,7 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="">
   
     
-    <script>function __prefix(e){return new URL("../../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
       <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mqtt-on-aws" class="md-skip">
+        <a href="#identity-and-access-management" class="md-skip">
           Skip to content
         </a>
       
@@ -80,9 +80,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="ECE-IoT Prototyping" class="md-header__button md-logo" aria-label="ECE-IoT Prototyping" data-md-component="logo">
+    <a href="../../.." title="ECE-IoT Prototyping" class="md-header__button md-logo" aria-label="ECE-IoT Prototyping" data-md-component="logo">
       
-  <img src="../../../../assets/logo.png" alt="logo">
+  <img src="../../../assets/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MQTT
+              Identity and Access Management
             
           </span>
         </div>
@@ -197,7 +197,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../../../.." class="md-tabs__link">
+    <a href="../../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -212,7 +212,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../tutorials/cpp-coding-style/" class="md-tabs__link">
+      <a href="../../../tutorials/cpp-coding-style/" class="md-tabs__link">
         Tutorials
       </a>
     </li>
@@ -265,9 +265,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="ECE-IoT Prototyping" class="md-nav__button md-logo" aria-label="ECE-IoT Prototyping" data-md-component="logo">
+    <a href="../../.." title="ECE-IoT Prototyping" class="md-nav__button md-logo" aria-label="ECE-IoT Prototyping" data-md-component="logo">
       
-  <img src="../../../../assets/logo.png" alt="logo">
+  <img src="../../../assets/logo.png" alt="logo">
 
     </a>
     ECE-IoT Prototyping
@@ -296,7 +296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -337,7 +337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../tutorials/cpp-coding-style/" class="md-nav__link">
+      <a href="../../../tutorials/cpp-coding-style/" class="md-nav__link">
         C++
       </a>
     </li>
@@ -351,7 +351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../tutorials/git-commit-style/" class="md-nav__link">
+      <a href="../../../tutorials/git-commit-style/" class="md-nav__link">
         Git
       </a>
     </li>
@@ -365,7 +365,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../tutorials/prototyping-guide/" class="md-nav__link">
+      <a href="../../../tutorials/prototyping-guide/" class="md-nav__link">
         Prototyping Guide
       </a>
     </li>
@@ -452,10 +452,88 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Identity and Access Management
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        MQTT
+        Identity and Access Management
       </a>
       
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#users" class="md-nav__link">
+    Users
+  </a>
+  
+    <nav class="md-nav" aria-label="Users">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#root" class="md-nav__link">
+    Root
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#administrator" class="md-nav__link">
+    Administrator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#developer" class="md-nav__link">
+    Developer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groups-and-policies" class="md-nav__link">
+    Groups and Policies
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws-cli/" class="md-nav__link">
+        CLI
+      </a>
     </li>
   
 
@@ -493,6 +571,55 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#users" class="md-nav__link">
+    Users
+  </a>
+  
+    <nav class="md-nav" aria-label="Users">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#root" class="md-nav__link">
+    Root
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#administrator" class="md-nav__link">
+    Administrator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#developer" class="md-nav__link">
+    Developer
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#groups-and-policies" class="md-nav__link">
+    Groups and Policies
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -503,13 +630,28 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/ECE-IoT/Prototyping/edit/master/docs/src/aws/mqtt/doc-mqtt.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/ECE-IoT/Prototyping/edit/master/docs/src/aws/aws-iam.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="mqtt-on-aws">MQTT on AWS</h1>
-<p>Documentation for MQTT connection to AWS.</p>
+                <h1 id="identity-and-access-management">Identity and Access Management</h1>
+<p>IAM is a web service that helps to securely control access to AWS resources. In order to operate securely when handling with multiple developers, projects a good access hierarchy is compulsory. </p>
+<p><em>Link</em> to the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html">docs</a></p>
+<h2 id="users">Users</h2>
+<h3 id="root">Root</h3>
+<p>When creating a AWS account the first user is the <strong>root</strong> user, which owns the account, has all access rights. This account provides the billing information, has the ability to change the password of all other <strong>sub-users</strong>. This level of access can be dangerous when handling with lower-level tasks, so it's recommended to not use the root user credentials for <em>everyday</em> development/access. </p>
+<h3 id="administrator">Administrator</h3>
+<p>The Administrator user has almost the same access rights as the root. The biggest exception is that the Administrator is <strong>not</strong> the owner of the account. An Administrator can be used for managing the rest of the Accounts with a extra level of security. </p>
+<h3 id="developer">Developer</h3>
+<p>Multiple developer accounts can be created. They do have access to the certain resource in which they are building the desired Application. </p>
+<h2 id="groups-and-policies">Groups and Policies</h2>
+<p>Summed up, those two sections are used to an easier management of different resource distribution.</p>
+<hr />
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This summary is only a rough overview of the complex functionality of AWS IAM. In order to get a deeper understanding reading the docs is mandatory!</p>
+</div>
                 
                   
                     
@@ -518,7 +660,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: 2021-10-07
+      Last update: 2021-10-09
     
   </small>
 </div>
@@ -547,7 +689,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../../../../tutorials/prototyping-guide/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Prototyping Guide" rel="prev">
+        <a href="../../../tutorials/prototyping-guide/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Prototyping Guide" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -561,6 +703,21 @@
           </div>
         </a>
       
+      
+        
+        <a href="../aws-cli/" class="md-footer__link md-footer__link--next" aria-label="Next: CLI" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              CLI
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
       
     </nav>
   
@@ -585,10 +742,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.f8263e09.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.f8263e09.min.js", "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.4fc53ad4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.4fc53ad4.min.js"></script>
       
     
   </body>

@@ -1,12 +1,16 @@
 {
-    "cSpell.words": [
-        "Arduinos",
-        "favicon",
-        "microcontrollers",
-        "MQTT",
-        "pymdownx",
-        "smartsymbols",
-        "superfences",
-        "tasklist"
-    ]
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Microsoft,  ColumnLimit: 120, PointerAlignment: Left, IndentWidth: 2, AlignAfterOpenBracket: AlwaysBreak, AlignConsecutiveAssignments: AcrossEmptyLinesAndComments, AlignConsecutiveMacros: AcrossEmptyLinesAndComments, AllowShortBlocksOnASingleLine: Never, BreakBeforeTernaryOperators: true}",
+    "C_Cpp.autoAddFileAssociations": true,
+    "C_Cpp.autocompleteAddParentheses": true,
+    "C_Cpp.autocomplete": "Default",
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "C_Cpp.enhancedColorization": "Enabled",
+    "C_Cpp.suggestSnippets": true,
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "editor.tabSize": 2
 }

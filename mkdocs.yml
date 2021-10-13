@@ -11,6 +11,7 @@ nav:
       - Arduino:
           - Arduino IoT Cloud: src/arduino/arduino-iot-cloud/doc-aic-overview.md
           - Arduino IoT Cloud compatible boards: src/arduino/arduino-iot-cloud/doc-aic-boards.md
+          - Arduino IoT Cloud example: src/arduino/arduino-iot-cloud/doc-aic-example.md
 
 repo_url: https://github.com/ECE-IoT/Prototyping
 

@@ -2,6 +2,9 @@
 <!-- Macht die Strukturierung so Sinn? -->
 
 ## Concept
+In the beginning a thing is created. A device is assigned to it. For a thing, several variables can be created, which can have different functionalities and are automatically synchronized with the device. Furthermore, network information must be specified. From this information, a code is automatically generated, which does all the work for the user. The user now only has to insert his own code (e.g. read temperature sensor) and all the work around has already been done automatically.
+
+> The AIC and the whole process seems to me that it is actually what should come out of our project.
 <!-- TODO -->
 
 ## Web editor

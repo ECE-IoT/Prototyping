@@ -15,7 +15,8 @@
 
 ## Libraries
 
-DHT.h and Adafruit_Sensor.h
+- [DHT.h](https://github.com/adafruit/DHT-sensor-library/blob/master/DHT.h)
+- [Adafruit_Sensor.h](https://github.com/adafruit/Adafruit_Sensor)
 
 ## Implementation
 
@@ -28,7 +29,7 @@ To generate a DHT object it is necessary to specify the data Pin and wich sensor
 DHT dht(DHTPIN, DHTTYPE);
 ```
 In the setup() it is necessary to call.
-
+<!-- Warum eigentlich? -->
 ```
 dht.begin();
 ```

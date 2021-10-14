@@ -7,20 +7,16 @@ nav:
       - Prototyping Guide: tutorials/prototyping-guide.md
   - Documentation:
       - AWS:
-          - MQTT: src/aws/mqtt/doc-mqtt.md
           - Identity and Access Management: src/aws/aws-iam.md
           - CLI: src/aws/aws-cli.md
       - Arduino:
-        - Arduino IoT Cloud:
-          - Overview: src/arduino/arduino-iot-cloud/doc-aic-overview.md
-          - Compatible boards: src/arduino/arduino-iot-cloud/doc-aic-boards.md
-          - Example: src/arduino/arduino-iot-cloud/doc-aic-example.md
-          - Getting started: src/arduino/arduino-iot-cloud/doc-aic-getting-started.md
-        - Hardware:
-          - Temperature and humidity sensor DHT11: src/arduino/arduino-hardware/doc-ahw-temp-humid.md
-      
-          
-         
+          - Arduino IoT Cloud:
+              - Overview: src/arduino/arduino-iot-cloud/doc-aic-overview.md
+              - Compatible boards: src/arduino/arduino-iot-cloud/doc-aic-boards.md
+              - Example: src/arduino/arduino-iot-cloud/doc-aic-example.md
+              - Getting started: src/arduino/arduino-iot-cloud/doc-aic-getting-started.md
+          - Hardware:
+              - Temperature and humidity sensor DHT11: src/arduino/arduino-hardware/doc-ahw-temp-humid.md
 
 repo_url: https://github.com/ECE-IoT/Prototyping
 

@@ -16,13 +16,12 @@ float mkr1010_humid;
 bool mkr1010_led;
 float mkr1010_temp;
 
-void initProperties(){
-
+void initProperties()
+{
   ArduinoCloud.setThingId(THING_ID);
   ArduinoCloud.addProperty(mkr1010_humid, READ, 1 * SECONDS, NULL);
   ArduinoCloud.addProperty(mkr1010_led, READWRITE, ON_CHANGE, onMkr1010LedChange);
   ArduinoCloud.addProperty(mkr1010_temp, READ, 1 * SECONDS, NULL);
-
 }
 
 WiFiConnectionHandler ArduinoIoTPreferredConnection(SSID, PASS);

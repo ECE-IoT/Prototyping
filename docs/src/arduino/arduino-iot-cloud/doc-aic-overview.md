@@ -36,6 +36,8 @@ The ArduinoIoTCloud library is the central element of the firmware enabling cert
 
 Library for handling and managing network connections by providing keep-alive functionality and automatic reconnection in case of connection-loss.
 
+> Further descriptions will follow soon.
+
 ## API
 Provides a set of endpoints to manage Arduino IoT Cloud Devices, Things, Properties and Timeseries. This API can be called just with any HTTP Client, or using one of these clients:
 
@@ -48,6 +50,15 @@ Provides a set of endpoints to manage Arduino IoT Cloud Devices, Things, Propert
 ## Security
 All IoT device communications to the cloud use the industry standard SSL protocol for encryption. Arduino MKR and Arduino Portenta board families have on-board crypto-authentication chips and are further secured using X.509 certificate-based authentication.
 > further research necessary. What exactly is the crypto authentication chip used for?
+
+---
+## Open questions
+- How exactly is the communication AIC - Device and Decive - Device implementet?
+
+Somehow with mqtt.
+
+- How god does the API work?
+- What exactly is the crypto authentication chip used for?
 
 ## Source of information
 This description ist mainly based on the following sources:

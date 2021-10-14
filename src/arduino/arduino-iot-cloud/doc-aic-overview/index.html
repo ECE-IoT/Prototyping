@@ -119,7 +119,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../../../aws/aws-cli/">
+<a class="md-tabs__link md-tabs__link--active" href="../../../aws/aws-iam/">
         Documentation
       </a>
 </li>
@@ -209,13 +209,13 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../aws/aws-cli/">
-        CLI
+<a class="md-nav__link" href="../../../aws/aws-iam/">
+        Identity and Access Management
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../aws/mqtt/doc-mqtt.md">
-        MQTT
+<a class="md-nav__link" href="../../../aws/aws-cli/">
+        CLI
       </a>
 </li>
 </ul>
@@ -288,6 +288,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#security">
     Security
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#open-questions">
+    Open questions
   </a>
 </li>
 <li class="md-nav__item">
@@ -387,6 +392,11 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#open-questions">
+    Open questions
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#source-of-information">
     Source of information
   </a>
@@ -429,6 +439,9 @@
 <p>The ArduinoIoTCloud library is the central element of the firmware enabling certain Arduino boards to connect to the Arduino IoT Cloud.</p>
 <p><strong><a href="https://github.com/arduino-libraries/Arduino_ConnectionHandler">Arduino_ConnectionHandler</a></strong></p>
 <p>Library for handling and managing network connections by providing keep-alive functionality and automatic reconnection in case of connection-loss.</p>
+<blockquote>
+<p>Further descriptions will follow soon.</p>
+</blockquote>
 <h2 id="api">API</h2>
 <p>Provides a set of endpoints to manage Arduino IoT Cloud Devices, Things, Properties and Timeseries. This API can be called just with any HTTP Client, or using one of these clients:</p>
 <ul>
@@ -444,6 +457,16 @@
 <blockquote>
 <p>further research necessary. What exactly is the crypto authentication chip used for?</p>
 </blockquote>
+<hr/>
+<h2 id="open-questions">Open questions</h2>
+<ul>
+<li>How exactly is the communication AIC - Device and Decive - Device implementet?</li>
+</ul>
+<p>Somehow with mqtt.</p>
+<ul>
+<li>How god does the API work?</li>
+<li>What exactly is the crypto authentication chip used for?</li>
+</ul>
 <h2 id="source-of-information">Source of information</h2>
 <p>This description ist mainly based on the following sources:</p>
 <!-- Add recources -->
@@ -451,7 +474,7 @@
 <div class="md-source-date">
 <small>
     
-      Last update: 2021-10-13
+      Last update: 2021-10-14
     
   </small>
 </div>

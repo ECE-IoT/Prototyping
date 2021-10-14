@@ -8,5 +8,9 @@ void setup()
 
 void loop() 
 {
+<<<<<<< HEAD
   example_loop();
+=======
+  // loop function
+>>>>>>> master
 }

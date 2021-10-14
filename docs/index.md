@@ -15,4 +15,4 @@ Here is the:
 which helps to set up everything correctly. When everything is configured as shown, the documentation of the prototyping phase should be easy and intuitive. 
 
 !!! warning 
-    The repository does `sync` the code in `main.cpp`. Thats due to the fact that every developer is using their own code in the `main.cpp`and this would cause a merge mess. 
+    The repository does *NOT* `sync` the code in `main.cpp`. Thats due to the fact that every developer is using their own code in the `main.cpp`and this would cause a merge mess. If you are `cloning` the *repository* the first time, please add a new `main.cpp` file to your file-tree `/src`

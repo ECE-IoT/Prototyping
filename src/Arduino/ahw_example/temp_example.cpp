@@ -17,8 +17,9 @@
 #include <Arduino.h>
 #include "Adafruit_Sensor.h"
 #include "DHT.h"
+#include "temp_example.hpp"
 
-#define DHTPIN D7
+#define DHTPIN 0
 #define DHTTYPE DHT11
 
 #define MEAS_DELAY 1000 // delay in ms
@@ -28,13 +29,13 @@ DHT dht(DHTPIN, DHTTYPE);
 float act_temp = 0; // last measured temperature
 float act_humid = 0; // last measured humidity
 
-void setup() 
+void tempSetup() 
 {
   Serial.begin(9600);
   dht.begin();
 }
 
-void loop() 
+void tempLoop() 
 {
   static unsigned long last_meas = millis();
   

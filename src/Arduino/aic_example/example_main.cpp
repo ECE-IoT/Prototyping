@@ -29,10 +29,10 @@
 #define MEAS_DELAY 1000 // delay in ms
 
 
-DHT dht(DHTPIN, DHTTYPE);
+DHT dht_2(DHTPIN, DHTTYPE);
 
-void example_setup() {
-  dht.begin();
+void exampleSetup() {
+  dht_2.begin();
   pinMode(LEDPIN, OUTPUT);
 
   // Initialize serial and wait for port to open:
@@ -58,7 +58,7 @@ void example_setup() {
   ArduinoCloud.printDebugInfo();
 }
 
-void example_loop() {
+void exampleLoop() {
   /*The Update is necessary to reset the wachtdogtimer. Otherwise the Watchdog would reset the Arduino*/
   ArduinoCloud.update();
 
@@ -66,8 +66,8 @@ void example_loop() {
 
   if ((millis() - last_meas) >= MEAS_DELAY)
   {
-    mkr1010_temp = dht.readTemperature();
-    mkr1010_humid = dht.readHumidity();
+    mkr1010_temp = dht_2.readTemperature();
+    mkr1010_humid = dht_2.readHumidity();
 
     Serial.print("Temperature: ");
     Serial.print(mkr1010_temp);

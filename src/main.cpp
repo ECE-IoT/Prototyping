@@ -1,4 +1,5 @@
 #include <Arduino.h>
+<<<<<<< HEAD
 #include <dht.h>
 #include <Adafruit_Sensor.h>
 
@@ -17,10 +18,21 @@ void setup()
     pinMode(LED, OUTPUT);
     Serial.begin(9600);
     dht.begin();
+=======
+#include "arduino-hardware/temperatur/temp_meas.hpp"
+
+
+
+void setup()
+{
+  tempSetup();
+  // setup here
+>>>>>>> b04181446c6de93884e06742ec1365b855f06313
 }
 
 void loop()
 {
+<<<<<<< HEAD
   digitalWrite(LED, HIGH);
   delay(500);
   digitalWrite(LED, LOW);
@@ -42,4 +54,7 @@ void loop()
   
     last_meas = millis();
   }
+=======
+  // loop function
+>>>>>>> b04181446c6de93884e06742ec1365b855f06313
 }

@@ -7,6 +7,7 @@
             +-1 hPa before calibration
 - maximum Sampling Rate: 25Hz
 - Body size: 25mm X 25mm X 7,6mm
+- Form Faktor: STEMMA QT / Qwiic
 - Current Consumption: High resolution mode: 25µA
                       low power mode: 4µA
 - Communication Interface: I2C, SPI

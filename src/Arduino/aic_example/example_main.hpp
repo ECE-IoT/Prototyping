@@ -1,0 +1,3 @@
+
+void exampleSetup();
+void exampleLoop();

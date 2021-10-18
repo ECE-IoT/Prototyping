@@ -27,16 +27,23 @@
 
 ## Implementation
 
-### Example Code
+Include Library for this sensor:
 
 ```
 #include "Adafruit_seesaw.h"
+```
 
+Generate a new object:
+
+```
 Adafruit_seesaw ss;
+```
 
+Set the baud rate and check if a sensor is connected to the board:
+
+```
 void setup() {
   Serial.begin(115200);
-
   Serial.println("seesaw Soil Sensor example!");
   
   if (!ss.begin(0x36)) {
@@ -47,11 +54,17 @@ void setup() {
     Serial.println(ss.getVersion(), HEX);
   }
 }
-
+```
+Now the soil humidity can be reading by using:
+```
 void loop() {
   float tempC = ss.getTemp();
   uint16_t capread = ss.touchRead(0);
+```
 
+The data will be printed on the Serial monitor:
+
+```
   Serial.print("Temperature: "); Serial.print(tempC); Serial.println("*C");
   Serial.print("Capacitive: "); Serial.println(capread);
   delay(100);

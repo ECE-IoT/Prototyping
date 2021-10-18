@@ -19,7 +19,7 @@
 
 ## Picture of the sensor
 
-![Soil sensor](STEMMA.png)
+![Soil sensor](soil-sensor.png)
 
 ## Libraries
 
@@ -73,6 +73,4 @@ The data will be printed on the Serial monitor:
 
 ## How to connect the sensor on the Arduino
 
-![Soil sensor circuit](STEMMA_circuit.png)
-
-#
+![Soil sensor circuit](soil-sensor-circuit.png)

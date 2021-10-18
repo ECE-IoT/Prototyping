@@ -1,6 +1,6 @@
-# Adafruit STEMMA Soil/Moisture Sensor
+ Adafruit Soil/Moisture Sensor
 
-## STEMMA
+## Soil Sensor
 
 - Ultra small Design
 - Can be used with 3.3V or 5V logic level
@@ -19,7 +19,7 @@
 
 ## Picture of the sensor
 
-![STEMMA circuit](STEMMA.png)
+![Soil sensor](STEMMA.png)
 
 ## Libraries
 
@@ -73,5 +73,6 @@ The data will be printed on the Serial monitor:
 
 ## How to connect the sensor on the Arduino
 
-![STEMMA circuit](STEMMA_circuit.png)
+![Soil sensor circuit](STEMMA_circuit.png)
 
+#

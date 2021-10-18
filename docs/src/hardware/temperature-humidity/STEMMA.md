@@ -17,6 +17,9 @@
 - Can be connected with a 4-pin JST-PH Connector
 > More information can be found [here](https://learn.adafruit.com/adafruit-stemma-soil-sensor-i2c-capacitive-moisture-sensor)
 
+## Picture of the sensor
+
+![STEMMA circuit](STEMMA.png)
 
 ## Libraries
 
@@ -24,5 +27,38 @@
 
 ## Implementation
 
+### Example Code
+
 ```
-<!-- Eventuell noch einen Schaltplan mit fritzing zeichnen und das sceduling beschreiben. -->
+#include "Adafruit_seesaw.h"
+
+Adafruit_seesaw ss;
+
+void setup() {
+  Serial.begin(115200);
+
+  Serial.println("seesaw Soil Sensor example!");
+  
+  if (!ss.begin(0x36)) {
+    Serial.println("ERROR! seesaw not found");
+    while(1);
+  } else {
+    Serial.print("seesaw started! version: ");
+    Serial.println(ss.getVersion(), HEX);
+  }
+}
+
+void loop() {
+  float tempC = ss.getTemp();
+  uint16_t capread = ss.touchRead(0);
+
+  Serial.print("Temperature: "); Serial.print(tempC); Serial.println("*C");
+  Serial.print("Capacitive: "); Serial.println(capread);
+  delay(100);
+}
+```
+
+## How to connect the sensor on the Arduino
+
+![STEMMA circuit](STEMMA_circuit.png)
+

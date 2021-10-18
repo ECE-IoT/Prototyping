@@ -17,8 +17,6 @@
 - Ezo I2C libary
 - Ezo UART libary
 
-
-
 ## Implementation
 ### arduino 
 //This code was written to be easy to understand.

@@ -4,7 +4,6 @@
 
 ## Anemometer
 
-
 - Supply voltage 7-24VDC
 - Output range from 0.4V(0 m/s) to 2V(32.4m/s)
 - Height: 105mm
@@ -105,3 +104,8 @@ float mapfloat(float x, float in_min, float in_max, float out_min, float out_max
 ## Picture of the sensor
 
 ![Anemometer](Anemometer.jpg)
+
+
+## Example circuit
+
+![Anemometer circuit](Anemometer_circuit.png)

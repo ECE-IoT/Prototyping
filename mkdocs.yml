@@ -1,30 +1,30 @@
 site_name: ECE-IoT Prototyping
 nav:
   - Home: index.md
-  - Tutorials:
-      - C++: tutorials/cpp-coding-style.md
-      - Git: tutorials/git-commit-style.md
-      - Prototyping Guide: tutorials/prototyping-guide.md
-  - Documentation:
-      - AWS:
-          - Identity and Access Management: src/aws/aws-iam.md
-          - CLI: src/aws/aws-cli.md
-      - Arduino:
-          - Arduino IoT Cloud:
-              - Getting started: src/arduino/arduino-iot-cloud/doc-aic-getting-started.md
-              - Overview: src/arduino/arduino-iot-cloud/doc-aic-overview.md
-              - Compatible boards: src/arduino/arduino-iot-cloud/doc-aic-boards.md
-              - Example: src/arduino/arduino-iot-cloud/doc-aic-example.md
-      - Hardware:
-          - Temperature and Humidity:
-              - DHT11: src/hardware/temperature-humidity/dht11.md
-              - Soil Sensor: src/hardware/temperature-humidity/soil-sensor.md
-          - Wind Velocity:
-              - Anemometer: src/hardware/wind-velocity/Anemometer.md
-          - Gas:
-              - CCS881: src/hardware/CO2/CCS881.md
-          - Luminosity:
-              - VEML7700: src/hardware/brightness/VEML7700.md
+  # - Tutorials:
+  #     - C++: tutorials/cpp-coding-style.md
+  #     - Git: tutorials/git-commit-style.md
+  #     - Prototyping Guide: tutorials/prototyping-guide.md
+  # - Documentation:
+  #     - AWS:
+  #         - Identity and Access Management: src/aws/aws-iam.md
+  #         - CLI: src/aws/aws-cli.md
+  #     - Arduino:
+  #         - Arduino IoT Cloud:
+  #             - Getting started: src/arduino/arduino-iot-cloud/doc-aic-getting-started.md
+  #             - Overview: src/arduino/arduino-iot-cloud/doc-aic-overview.md
+  #             - Compatible boards: src/arduino/arduino-iot-cloud/doc-aic-boards.md
+  #             - Example: src/arduino/arduino-iot-cloud/doc-aic-example.md
+  #     - Hardware:
+  #         - Temperature and Humidity:
+  #             - DHT11: src/hardware/temperature-humidity/dht11.md
+  #             - Soil Sensor: src/hardware/temperature-humidity/soil-sensor.md
+  #         - Wind Velocity:
+  #             - Anemometer: src/hardware/wind-velocity/Anemometer.md
+  #         - Gas:
+  #             - CCS881: src/hardware/CO2/CCS881.md
+  #         - Luminosity:
+  #             - VEML7700: src/hardware/brightness/VEML7700.md
 
 repo_url: https://github.com/ECE-IoT/Prototyping
 

@@ -8,8 +8,11 @@
 .vscode/ipch
 .vscode/setting.json
 
-# main.cpp is not included in order to keep it clean even though it's used for testing
-src/main.cpp
+# exclude Apple Specific files
+.**/DS_Store
+
+# python specific ignores 
+__pycache__/
 
 # does not need to be synched, just for mkdocs locally
 site/

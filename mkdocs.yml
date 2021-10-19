@@ -18,6 +18,13 @@ nav:
       - Hardware:
           - Temperature and Humidity:
               - DHT11: src/hardware/temperature-humidity/dht11.md
+              - Soil Sensor: src/hardware/temperature-humidity/soil-sensor.md
+          - Wind Velocity:
+              - Anemometer: src/hardware/wind-velocity/Anemometer.md
+          - Gas:
+              - CCS881: src/hardware/CO2/CCS881.md
+          - Luminosity:
+              - VEML7700: src/hardware/brightness/VEML7700.md
 
 repo_url: https://github.com/ECE-IoT/Prototyping
 

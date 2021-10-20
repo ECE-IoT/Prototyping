@@ -5,24 +5,24 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<link href="assets/logo.png" rel="icon"/>
+<link href="../../../../../../../assets/logo.png" rel="icon"/>
 <meta content="mkdocs-1.2.2, mkdocs-material-7.3.0" name="generator"/>
-<title>ECE-IoT Prototyping</title>
-<link href="assets/stylesheets/main.8b42a75e.min.css" rel="stylesheet"/>
-<link href="assets/stylesheets/palette.3f5d1f46.min.css" rel="stylesheet"/>
+<title>DHT11 - ECE-IoT Prototyping</title>
+<link href="../../../../../../../assets/stylesheets/main.8b42a75e.min.css" rel="stylesheet"/>
+<link href="../../../../../../../assets/stylesheets/palette.3f5d1f46.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
-<link href="assets/_mkdocstrings.css" rel="stylesheet"/>
+<link href="../../../../../../../assets/_mkdocstrings.css" rel="stylesheet"/>
 </head>
 <body data-md-color-accent="light-blue" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
-<script>function __prefix(e){return new URL(".",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+<script>function __prefix(e){return new URL("../../../../../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
 <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#prototyping-documentation">
+<a class="md-skip" href="#temperature-and-humidity-sensor-dht11">
           Skip to content
         </a>
 </div>
@@ -30,8 +30,8 @@
 </div>
 <header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="ECE-IoT Prototyping" class="md-header__button md-logo" data-md-component="logo" href="." title="ECE-IoT Prototyping">
-<img alt="logo" src="assets/logo.png"/>
+<a aria-label="ECE-IoT Prototyping" class="md-header__button md-logo" data-md-component="logo" href="../../../../../../.." title="ECE-IoT Prototyping">
+<img alt="logo" src="../../../../../../../assets/logo.png"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
@@ -46,7 +46,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Home
+              DHT11
             
           </span>
 </div>
@@ -109,17 +109,17 @@
 <div class="md-tabs__inner md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href=".">
+<a class="md-tabs__link" href="../../../../../../..">
       Home
     </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="tutorials/guides/cpp-coding-style/">
+<a class="md-tabs__link" href="../../../../../../../tutorials/guides/cpp-coding-style/">
         Tutorials
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link" href="code/aws/docs/administration/aws-iam/">
+<a class="md-tabs__link md-tabs__link--active" href="../../../../../../aws/docs/administration/aws-iam/">
         Documentation
       </a>
 </li>
@@ -133,8 +133,8 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="ECE-IoT Prototyping" class="md-nav__button md-logo" data-md-component="logo" href="." title="ECE-IoT Prototyping">
-<img alt="logo" src="assets/logo.png"/>
+<a aria-label="ECE-IoT Prototyping" class="md-nav__button md-logo" data-md-component="logo" href="../../../../../../.." title="ECE-IoT Prototyping">
+<img alt="logo" src="../../../../../../../assets/logo.png"/>
 </a>
     ECE-IoT Prototyping
   </label>
@@ -149,9 +149,8 @@
 </a>
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<a class="md-nav__link md-nav__link--active" href=".">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../../../..">
         Home
       </a>
 </li>
@@ -168,25 +167,25 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="tutorials/guides/cpp-coding-style/">
+<a class="md-nav__link" href="../../../../../../../tutorials/guides/cpp-coding-style/">
         C++
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="tutorials/guides/git-commit-style/">
+<a class="md-nav__link" href="../../../../../../../tutorials/guides/git-commit-style/">
         Git
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="tutorials/guides/prototyping-guide/">
+<a class="md-nav__link" href="../../../../../../../tutorials/guides/prototyping-guide/">
         Prototyping Guide
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3">
           Documentation
           <span class="md-nav__icon md-icon"></span>
@@ -222,12 +221,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="code/aws/docs/administration/aws-iam/">
+<a class="md-nav__link" href="../../../../../../aws/docs/administration/aws-iam/">
         IAM
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="code/aws/docs/administration/aws-cli/">
+<a class="md-nav__link" href="../../../../../../aws/docs/administration/aws-cli/">
         CLI
       </a>
 </li>
@@ -237,8 +236,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" id="__nav_3_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" id="__nav_3_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_2">
           Arduino
           <span class="md-nav__icon md-icon"></span>
@@ -262,30 +261,30 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="code/arduino/arduino-iot-cloud/docs/doc-aic-getting-started/">
+<a class="md-nav__link" href="../../../../../arduino-iot-cloud/docs/doc-aic-getting-started/">
         Getting Started
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="code/arduino/arduino-iot-cloud/docs/doc-aic-overview/">
+<a class="md-nav__link" href="../../../../../arduino-iot-cloud/docs/doc-aic-overview/">
         Overview
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="code/arduino/arduino-iot-cloud/docs/doc-aic-boards/">
+<a class="md-nav__link" href="../../../../../arduino-iot-cloud/docs/doc-aic-boards/">
         Boards
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="code/arduino/arduino-iot-cloud/doc-aic-boards.md">
+<a class="md-nav__link" href="../../../../../arduino-iot-cloud/doc-aic-boards.md">
         Example
       </a>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_2" id="__nav_3_2_2" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_2" id="__nav_3_2_2" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_2_2">
           Hardware
           <span class="md-nav__icon md-icon"></span>
@@ -296,8 +295,8 @@
           Hardware
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_2_1" id="__nav_3_2_2_1" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_2_1" id="__nav_3_2_2_1" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_2_2_1">
           Temperature and Humidity
           <span class="md-nav__icon md-icon"></span>
@@ -309,14 +308,42 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="code/arduino/arduino-hardware/temperature-humidity/soil-sensor/soil-sensor/">
+<a class="md-nav__link" href="../../../soil-sensor/soil-sensor/">
         Soil Sensor
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="code/arduino/arduino-hardware/temperature-humidity/dht11/docs/dht11/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          DHT11
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         DHT11
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dht11">
+    DHT11
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#libraries">
+    Libraries
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#implementation">
+    Implementation
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -334,22 +361,22 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="code/arduino/arduino-hardware/wind-velocity/anemometer/Anemometer/">
+<a class="md-nav__link" href="../../../../wind-velocity/anemometer/Anemometer/">
         Velocity
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="code/arduino/arduino-hardware/air-pressure/LPS25HB/LPS25HB/">
+<a class="md-nav__link" href="../../../../air-pressure/LPS25HB/LPS25HB/">
         Pressure
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="code/arduino/arduino-hardware/co2/CCS881/CCS881/">
+<a class="md-nav__link" href="../../../../co2/CCS881/CCS881/">
         CO2
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="code/arduino/arduino-hardware/air-quality/PMSA003I/PMSA003I/">
+<a class="md-nav__link" href="../../../../air-quality/PMSA003I/PMSA003I/">
         Quality
       </a>
 </li>
@@ -374,35 +401,77 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dht11">
+    DHT11
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#libraries">
+    Libraries
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#implementation">
+    Implementation
+  </a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ECE-IoT/Prototyping/edit/master/docs/index.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/ECE-IoT/Prototyping/edit/master/docs/code/arduino/arduino-hardware/temperature-humidity/dht11/docs/dht11.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="prototyping-documentation">Prototyping Documentation</h1>
-<p>This documentations intention is to get a depth sight into everything discoverd while playing around with Arduinos, other microcontrollers and IoT Cloud Systems. </p>
-<p>For prototyping purposes a <a href="https://platformio.org"><strong>PlatformIO</strong></a> project has been created. The repository can be <em>cloned</em> by using the following link</p>
-<div class="highlight"><pre><span></span><code>https://github.com/ECE-IoT/Prototyping.git
-</code></pre></div>
-<hr/>
-<p>Here is the:</p>
-<blockquote>
-<p><a href="tutorials/prototyping-guide.md"><strong>Prototyping Guide</strong></a> </p>
+<h1 id="temperature-and-humidity-sensor-dht11">Temperature and humidity Sensor DHT11</h1>
+<h2 id="dht11">DHT11</h2>
+<ul>
+<li>Ultra low cost</li>
+<li>3 to 5V power and I/O</li>
+<li>2.5mA max current use during conversion (while requesting data)</li>
+<li>Good for 20-80% humidity readings with 5% accuracy</li>
+<li>Good for 0-50°C temperature readings ±2°C accuracy</li>
+<li>No more than 1 Hz sampling rate (once every second)</li>
+<li>Body size 15.5mm x 12mm x 5.5mm</li>
+<li>4 pins with 0.1" spacing<blockquote>
+<p>More information can be found <a href="https://learn.adafruit.com/dht">here</a></p>
 </blockquote>
-<p>which helps to set up everything correctly. When everything is configured as shown, the documentation of the prototyping phase should be easy and intuitive. </p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The repository does <em>NOT</em> <code>sync</code> the code in <code>main.cpp</code>. Thats due to the fact that every developer is using their own code in the <code>main.cpp</code>and this would cause a merge mess. If you are <code>cloning</code> the <em>repository</em> the first time, please add a new <code>main.cpp</code> file to your file-tree <code>/src</code></p>
-</div>
+</li>
+</ul>
+<h2 id="libraries">Libraries</h2>
+<ul>
+<li><a href="https://github.com/adafruit/DHT-sensor-library/blob/master/DHT.h">DHT.h</a></li>
+<li><a href="https://github.com/adafruit/Adafruit_Sensor">Adafruit_Sensor.h</a></li>
+</ul>
+<h2 id="implementation">Implementation</h2>
+<p>To generate a DHT object it is necessary to specify the data Pin and wich sensor type is used.</p>
+<p><div class="highlight"><pre><span></span><code>#define DHTPIN 0
+#define DHTTYPE DHT11
+
+DHT dht(DHTPIN, DHTTYPE);
+</code></pre></div>
+In the setup() it is necessary to call.</p>
+<!-- Warum eigentlich? -->
+<p><div class="highlight"><pre><span></span><code>dht.begin();
+</code></pre></div>
+Now the temperature and humidity can be read by using:
+<div class="highlight"><pre><span></span><code>float temp = dht.readTemperature();
+float humid = dht.readHumidity();
+</code></pre></div></p>
+<!-- Eventuell noch einen Schaltplan mit fritzing zeichnen und das sceduling beschreiben. -->
 <hr/>
 <div class="md-source-date">
 <small>
     
-      Last update: 2021-10-15
+      Last update: 2021-10-20
     
   </small>
 </div>
@@ -416,13 +485,26 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Next: C++" class="md-footer__link md-footer__link--next" href="tutorials/guides/cpp-coding-style/" rel="next">
+<a aria-label="Previous: Soil Sensor" class="md-footer__link md-footer__link--prev" href="../../../soil-sensor/soil-sensor/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              Soil Sensor
+            </div>
+</div>
+</a>
+<a aria-label="Next: Velocity" class="md-footer__link md-footer__link--next" href="../../../../wind-velocity/anemometer/Anemometer/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              C++
+              Velocity
             </div>
 </div>
 <div class="md-footer__button md-icon">
@@ -447,7 +529,7 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "assets/javascripts/workers/search.f8263e09.min.js", "version": null}</script>
-<script src="assets/javascripts/bundle.4fc53ad4.min.js"></script>
+<script id="__config" type="application/json">{"base": "../../../../../../..", "features": ["navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../../../../assets/javascripts/workers/search.f8263e09.min.js", "version": null}</script>
+<script src="../../../../../../../assets/javascripts/bundle.4fc53ad4.min.js"></script>
 </body>
 </html>

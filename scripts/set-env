@@ -22,22 +22,23 @@ AWS_FILTER = "-<docs/>  +<examples/> -<.git/> +<main.cpp>"
 
 BASE_PATH = os.path.join(os.path.dirname(
     os.path.abspath(__file__)), os.pardir)
-CONFIG_PATH = os.path.join(BASE_PATH, 'config', 'env')
-ENV_INI_PATH = os.path.join(CONFIG_PATH, "env.ini")
+CONFIG_PATH = os.path.join(BASE_PATH, 'config')
+ENV_INI_PATH = os.path.join(CONFIG_PATH, "env", "env.ini")
 
 
 def checkFile():
     if not os.path.exists(CONFIG_PATH):
-      print("No file detected. A new file will be created \n")
+      print("--> no file detected. A new file will be created \n")
       os.mkdir(CONFIG_PATH, 0o755)
+      os.mkdir(os.path.join(CONFIG_PATH, "env"), 0o755)
       with open(ENV_INI_PATH, 'w') as env:
         env_config.read(ENV_INI_PATH)
         env_config.add_section("common")
 
-        with open(CONFIG_PATH, 'w') as f:
+        with open(ENV_INI_PATH, 'w') as f:
           env_config.write(f)
 
-        print("New file created \n")
+        print("--> new file created \n")
 
 def setEnvironment():
   parser = argparse.ArgumentParser()
@@ -46,7 +47,7 @@ def setEnvironment():
   parser.add_argument("-hw", "--hardware", help="sets src_filter for hardware folder")
   args = parser.parse_args()
 
-  env_config.read(CONFIG_PATH)
+  env_config.read(ENV_INI_PATH)
 
   if args.env == envs[0]:
     env_config["common"]["src_dir"] = AWS
@@ -62,7 +63,7 @@ def setEnvironment():
       env_config["common"]["src_filter"] = HARDWARE_FILTER
       print(f"--> set the filter {HARDWARE_FILTER} for arduino")
 
-  with open(CONFIG_PATH, 'w') as f:
+  with open(ENV_INI_PATH, 'w') as f:
     env_config.write(f)
 
   print(f"--> the environment {args.env} has been set \n")

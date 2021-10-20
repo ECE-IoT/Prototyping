@@ -23,22 +23,30 @@ AWS_FILTER = "-<docs/>  +<examples/> -<.git/> +<main.cpp>"
 BASE_PATH = os.path.join(os.path.dirname(
     os.path.abspath(__file__)), os.pardir)
 CONFIG_PATH = os.path.join(BASE_PATH, 'config')
+ENV_PATH = os.path.join(CONFIG_PATH, 'env')
 ENV_INI_PATH = os.path.join(CONFIG_PATH, "env", "env.ini")
 
+def createFile():
+  with open(ENV_INI_PATH, 'w') as env:
+    env_config.read(ENV_INI_PATH)
+    env_config.add_section("common")
+
+    with open(ENV_INI_PATH, 'w') as f:
+      env_config.write(f)
+
+    print("--> new file created \n")
 
 def checkFile():
-    if not os.path.exists(CONFIG_PATH):
-      print("--> no file detected. A new file will be created \n")
+    if not os.path.exists(CONFIG_PATH) and not os.path.exists(ENV_PATH):
+      print("--> no file and no directory detected. A new file within a new directory will be created \n")
       os.mkdir(CONFIG_PATH, 0o755)
       os.mkdir(os.path.join(CONFIG_PATH, "env"), 0o755)
-      with open(ENV_INI_PATH, 'w') as env:
-        env_config.read(ENV_INI_PATH)
-        env_config.add_section("common")
+      createFile()
+    elif os.path.exists(CONFIG_PATH) and not os.path.exists(ENV_PATH):
+      print("--> no file detected. A new file will be created \n")
+      os.mkdir(os.path.join(CONFIG_PATH, "env"), 0o755)
+      createFile()
 
-        with open(ENV_INI_PATH, 'w') as f:
-          env_config.write(f)
-
-        print("--> new file created \n")
 
 def setEnvironment():
   parser = argparse.ArgumentParser()

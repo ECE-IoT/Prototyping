@@ -13,6 +13,8 @@ import yaml
 
 BASE_PATH = os.path.join(os.path.dirname(
     os.path.abspath(__file__)), os.pardir)
+CONF_PATH = os.path.join(BASE_PATH, 'config')
+DOC_PATH = os.path.join(CONF_PATH, 'docs')
 SCRIPT_PATH = os.path.join(BASE_PATH, 'config', 'docs', 'docs-path.yml')
 MKDOCS_PATH = os.path.join(BASE_PATH, 'docs', 'code')
 SRC_DOCS_PATH = os.path.join(BASE_PATH, 'code')
@@ -38,6 +40,12 @@ if __name__ == "__main__":
   print(f"\033[90m{__doc__}\033[0m", end="\n")
   print("--> copy all essential files into /docs")
 
+  if not os.path.exists(CONF_PATH) and not os.path.exists(DOC_PATH):
+    os.mkdir(CONF_PATH, 0o755)
+    os.mkdir(os.path.join(DOC_PATH), 0o755)
+  elif os.path.exists(CONF_PATH) and not os.path.exists(DOC_PATH):
+    os.mkdir(os.path.join(CONF_PATH, 'docs'))
+
   if os.path.exists(MKDOCS_PATH):
     rmtree(MKDOCS_PATH)
     print("--> remove old /docs revision first")
@@ -47,9 +55,9 @@ if __name__ == "__main__":
     copytree(SRC_DOCS_PATH, MKDOCS_PATH, ignore=ignore_patterns('*.cpp', '*.hpp', '*.c', '*.h', '*.json', '*.DS_Store'))
     print("--> remove empty directories")
     rmEmptyDir()
-    print("--> done")
+    print("--> done \n")
   except: 
-    print("!! --> an error occured")
+    print("!! --> an error occured \n")
 
   addDirToDocs()
 

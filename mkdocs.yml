@@ -2,9 +2,9 @@ site_name: ECE-IoT Prototyping
 nav:
   - Home: index.md
   - Tutorials:
-      - C++: tutorials/cpp-coding-style.md
-      - Git: tutorials/git-commit-style.md
-      - Prototyping Guide: tutorials/prototyping-guide.md
+      - C++: tutorials/guides/cpp-coding-style.md
+      - Git: tutorials/guides/git-commit-style.md
+      - Prototyping Guide: tutorials/guides/prototyping-guide.md
   - Documentation:
       - AWS:
           - Administration:
@@ -15,12 +15,12 @@ nav:
               - Getting Started: code/arduino/arduino-iot-cloud/docs/doc-aic-getting-started.md
               - Overview: code/arduino/arduino-iot-cloud/docs/doc-aic-overview.md
               - Boards: code/arduino/arduino-iot-cloud/docs/doc-aic-boards.md
-              - Example: code/docs/arduino/arduino-iot-cloud/doc-aic-boards.md
+              - Example: code/arduino/arduino-iot-cloud/doc-aic-boards.md
           - Hardware:
               - Temperature and Humidity:
                   - Soil Sensor: code/arduino/arduino-hardware/temperature-humidity/soil-sensor/soil-sensor.md
                   - DHT11: code/arduino/arduino-hardware/temperature-humidity/dht11/docs/dht11.md
-              - Wind:
+              - Air:
                   - Velocity: code/arduino/arduino-hardware/wind-velocity/anemometer/Anemometer.md
                   - Pressure: code/arduino/arduino-hardware/air-pressure/LPS25HB/LPS25HB.md
                   - CO2: code/arduino/arduino-hardware/co2/CCS881/CCS881.md
@@ -72,7 +72,7 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: python/name:mermaid2.fence_mermaid
+          format: !!python/name:mermaid2.fence_mermaid
   - pymdownx.smartsymbols
   - pymdownx.critic
   - pymdownx.tasklist:

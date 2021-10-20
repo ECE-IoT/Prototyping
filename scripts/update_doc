@@ -13,7 +13,7 @@ import yaml
 
 BASE_PATH = os.path.join(os.path.dirname(
     os.path.abspath(__file__)), os.pardir)
-SCRIPT_PATH = os.path.join(BASE_PATH, 'scripts', 'docs-path.yml')
+SCRIPT_PATH = os.path.join(BASE_PATH, 'config', 'docs', 'docs-path.yml')
 MKDOCS_PATH = os.path.join(BASE_PATH, 'docs', 'code')
 SRC_DOCS_PATH = os.path.join(BASE_PATH, 'code')
 

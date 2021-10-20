@@ -13,10 +13,8 @@ import configparser
 
 envs = ["aws", "arduino"]
 env_config = configparser.ConfigParser()
-aws_filter = "+<aws/ -<arduino/> -<.git/> -<.svn/> "
-arduino_filter = "-<aws/ +<arduino/> -<.git/> -<.svn/> "
-platform = "arduino"
-lib_deps_str = "${common.lib_deps}"
+aws = 'code/aws'
+arduino = 'code/arduino'
 
 BASE_PATH = os.path.join(os.path.dirname(
     os.path.abspath(__file__)), os.pardir)
@@ -27,9 +25,8 @@ def checkFile():
       print("No file detected. A new file will be created \n")
       with open(CONFIG_PATH, 'w') as env:
         env_config.read(CONFIG_PATH)
-        env_config.add_section("env")
-        env_config["env"]["platform"] = platform
-        env_config["env"]["lib_deps"] = lib_deps_str
+
+        env_config.add_section("common")
 
         with open(CONFIG_PATH, 'w') as f:
           env_config.write(f)
@@ -39,15 +36,14 @@ def checkFile():
 def setEnvironment():
   parser = argparse.ArgumentParser()
   parser.add_argument("env", help="Title of the desired environment (aws, arduino)")
-  parser.error(f"Enter a valid environment name ({envs}) in order to set the env.ini file correctly")
   args = parser.parse_args()
 
   env_config.read(CONFIG_PATH)
 
   if args.env == envs[0]:
-    env_config["env"]["src_filter"] = aws_filter
+    env_config["common"]["src_dir"] = aws
   elif args.env == envs[1]:
-    env_config["env"]["src_filter"] = arduino_filter
+    env_config["common"]["src_dir"] = arduino
 
   with open(CONFIG_PATH, 'w') as f:
     env_config.write(f)

@@ -14,10 +14,10 @@
   which are called when their values are changed from the Dashboard.
   These functions are generated with the Thing and added at the end of this sketch.
 */
-#include "example_main.hpp"
+#include "example.hpp"
 #include "Adafruit_Sensor.h"
 #include "DHT.h"
-#include "SNU.h" // this include had to be added because the include in the OTA-samd.cpp of SNU.h did not work.
+//#include "SNU.h" // this include had to be added because the include in the OTA-samd.cpp of SNU.h did not work.
 #include "arduino_secrets.h"
 #include "thingProperties.h"
 #include <Arduino.h>

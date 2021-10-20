@@ -4,7 +4,7 @@
 Created: 10/19/21
 by: Tim Schmid
 
-Automatically update the src_filter in platformio.ini
+automatically update the src_filter in platformio.ini
 """
 
 import os
@@ -13,8 +13,12 @@ import configparser
 
 envs = ["aws", "arduino"]
 env_config = configparser.ConfigParser()
-aws = 'code/aws'
-arduino = 'code/arduino'
+
+AWS = 'code/aws'
+ARDUINO = 'code/arduino'
+CLOUD_FILTER = "+<arduino-iot-cloud/>  -<arduino-hardware/> -<.git/> +<main.cpp>"
+HARDWARE_FILTER = "-<arduino-iot-cloud/>  +<arduino-hardware/> -<.git/> +<main.cpp>"
+AWS_FILTER = "-<docs/>  +<examples/> -<.git/> +<main.cpp>"
 
 BASE_PATH = os.path.join(os.path.dirname(
     os.path.abspath(__file__)), os.pardir)
@@ -25,7 +29,6 @@ def checkFile():
       print("No file detected. A new file will be created \n")
       with open(CONFIG_PATH, 'w') as env:
         env_config.read(CONFIG_PATH)
-
         env_config.add_section("common")
 
         with open(CONFIG_PATH, 'w') as f:
@@ -35,20 +38,31 @@ def checkFile():
 
 def setEnvironment():
   parser = argparse.ArgumentParser()
-  parser.add_argument("env", help="Title of the desired environment (aws, arduino)")
+  parser.add_argument("env", help="title of the desired environment (aws, arduino)")
+  parser.add_argument("-c", "--cloud", help="sets src_filter for cloud folder")
+  parser.add_argument("-hw", "--hardware", help="sets src_filter for hardware folder")
   args = parser.parse_args()
 
   env_config.read(CONFIG_PATH)
 
   if args.env == envs[0]:
-    env_config["common"]["src_dir"] = aws
+    env_config["common"]["src_dir"] = AWS
+    env_config["common"]["src_filter"] = AWS_FILTER
+    print(f"--> set the filter {AWS_FILTER} for aws")
   elif args.env == envs[1]:
-    env_config["common"]["src_dir"] = arduino
+    env_config["common"]["src_dir"] = ARDUINO
+
+    if args.cloud:
+      env_config["common"]["src_filter"] = CLOUD_FILTER
+      print(f"--> set the filter {CLOUD_FILTER} for arduino")
+    elif args.hardware: 
+      env_config["common"]["src_filter"] = HARDWARE_FILTER
+      print(f"--> set the filter {HARDWARE_FILTER} for arduino")
 
   with open(CONFIG_PATH, 'w') as f:
     env_config.write(f)
 
-  print(f"The environment {args.env} has been set \n")
+  print(f"--> the environment {args.env} has been set \n")
 
 
 if __name__ == "__main__":

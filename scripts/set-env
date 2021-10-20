@@ -22,13 +22,16 @@ AWS_FILTER = "-<docs/>  +<examples/> -<.git/> +<main.cpp>"
 
 BASE_PATH = os.path.join(os.path.dirname(
     os.path.abspath(__file__)), os.pardir)
-CONFIG_PATH = os.path.join(BASE_PATH, 'config', 'env', 'env.ini')
+CONFIG_PATH = os.path.join(BASE_PATH, 'config', 'env')
+ENV_INI_PATH = os.path.join(CONFIG_PATH, "env.ini")
+
 
 def checkFile():
     if not os.path.exists(CONFIG_PATH):
       print("No file detected. A new file will be created \n")
-      with open(CONFIG_PATH, 'w') as env:
-        env_config.read(CONFIG_PATH)
+      os.mkdir(CONFIG_PATH, 0o755)
+      with open(ENV_INI_PATH, 'w') as env:
+        env_config.read(ENV_INI_PATH)
         env_config.add_section("common")
 
         with open(CONFIG_PATH, 'w') as f:

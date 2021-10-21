@@ -48,7 +48,7 @@ def checkFile():
 
 def setEnvironment():
   parser = argparse.ArgumentParser()
-  parser.add_argument("env", help="title of the desired environment (aws, arduino)")
+  parser.add_argument("env", help="title of the desired environment", choices=envs)
   parser.add_argument("-c", "--cloud", help="sets src_filter for cloud folder", action="store_true")
   parser.add_argument("-hw", "--hardware", help="sets src_filter for hardware folder", action="store_true")
   args = parser.parse_args()

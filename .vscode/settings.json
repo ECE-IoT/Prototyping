@@ -12,5 +12,8 @@
     "[cpp]": {
         "editor.defaultFormatter": "ms-vscode.cpptools"
     },
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "files.associations": {
+        "*.impl": "cpp"
+    }
 }

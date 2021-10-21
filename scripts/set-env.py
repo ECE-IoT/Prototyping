@@ -14,11 +14,9 @@ import configparser
 envs = ["aws", "arduino"]
 env_config = configparser.ConfigParser()
 
-AWS = 'code/aws'
-ARDUINO = 'code/arduino'
-CLOUD_FILTER = "+<arduino-iot-cloud/>  -<arduino-hardware/> -<.git/> +<main.cpp>"
-HARDWARE_FILTER = "-<arduino-iot-cloud/>  +<arduino-hardware/> -<.git/> +<main.cpp>"
-AWS_FILTER = "-<docs/>  +<examples/> -<.git/> +<main.cpp>"
+CLOUD_FILTER = "+<arduino/>  -<arduino/arduino-hardware/"
+HARDWARE_FILTER = "+<arduino/> -<arduino/arduino-iot-cloud/>"
+AWS_FILTER = "+<aws/> -<.git/>"
 
 BASE_PATH = os.path.join(os.path.dirname(
     os.path.abspath(__file__)), os.pardir)
@@ -51,19 +49,16 @@ def checkFile():
 def setEnvironment():
   parser = argparse.ArgumentParser()
   parser.add_argument("env", help="title of the desired environment (aws, arduino)")
-  parser.add_argument("-c", "--cloud", help="sets src_filter for cloud folder")
-  parser.add_argument("-hw", "--hardware", help="sets src_filter for hardware folder")
+  parser.add_argument("-c", "--cloud", help="sets src_filter for cloud folder", action="store_true")
+  parser.add_argument("-hw", "--hardware", help="sets src_filter for hardware folder", action="store_true")
   args = parser.parse_args()
 
   env_config.read(ENV_INI_PATH)
 
   if args.env == envs[0]:
-    env_config["common"]["src_dir"] = AWS
     env_config["common"]["src_filter"] = AWS_FILTER
     print(f"--> set the filter {AWS_FILTER} for aws")
   elif args.env == envs[1]:
-    env_config["common"]["src_dir"] = ARDUINO
-
     if args.cloud:
       env_config["common"]["src_filter"] = CLOUD_FILTER
       print(f"--> set the filter {CLOUD_FILTER} for arduino")

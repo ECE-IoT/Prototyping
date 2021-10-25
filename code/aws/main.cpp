@@ -1,14 +1,13 @@
+#include "examples/onboard-certs/connect-device.hpp"
+#include "examples/onboard-certs/secrets.h"
 #include <Arduino.h>
 
 void setup()
 {
-  pinMode(LED_BUILTIN, OUTPUT);
+  connectWifi(WIFI_SSID, WIFI_PASSWORD);
 }
 
 void loop()
 {
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(1000);
+  Serial.println("Wifi connected");
 }

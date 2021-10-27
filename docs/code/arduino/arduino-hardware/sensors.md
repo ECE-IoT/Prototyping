@@ -80,3 +80,13 @@
 - Supplier: Amazon
 - Price: 3,99€
 > can orderd [here](https://www.amazon.de/Busirde-DS18B20-Edelstahl-wasserdicht-Temperaturf%C3%BChler/dp/B07GZWMCBM/ref=sr_1_15?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dchild=1&keywords=ds18b20&qid=1635324946&sr=8-15)
+
+
+## Rain Sensor Modul FC-37
+
+- Type of Sensor: rain fall 
+- Provider: SODIAL
+- Library: no Library needed (analog measuremnt)
+- Supplier: Amazon
+- Price: 2,35€
+> can orderd [here](https://www.amazon.de/Regensensor-SODIAL-Regenwasser-Modul-Erkennung-Wie-gezeigt/dp/B01D9JCK6K/ref=pd_sbs_6/257-7506484-9050519?pd_rd_w=BGOVU&pf_rd_p=b2a25e73-6e6a-41bb-a7ce-5f2d2342b819&pf_rd_r=5WBDCFHQYR7HF7ZYX707&pd_rd_r=f70bbba8-3b1a-487c-9c98-3776d813dbc0&pd_rd_wg=EpnoP&pd_rd_i=B01D9JCK6K&psc=1)

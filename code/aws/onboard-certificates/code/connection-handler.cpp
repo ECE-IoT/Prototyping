@@ -1,5 +1,5 @@
 #include "connection-handler.hpp"
-#include "secrets-esp32-d1mini-01.h"
+#include "../secrets/device-secrets.h"
 #include <Arduino.h>
 #include <ArduinoJson.h>
 #include <MQTTClient.h>

@@ -1,5 +1,5 @@
-#include "examples/onboard-certs/connection-handler.hpp"
-#include "examples/onboard-certs/secrets-wifi-home.h"
+#include "../secrets/wifi-secrets.h"
+#include "onboard-certificates/code/connection-handler.hpp"
 
 #include <Arduino.h>
 
@@ -9,8 +9,8 @@
 
 void setup()
 {
-  Serial.begin(115200);
-  initWIFI(WIFI_SSID, WIFI_PASSWORD);
+  Serial.begin(9600);
+  initWIFI(H_WIFI_SSID, H_WIFI_PASSWORD);
   initAWS(AWS_IOT_ENDPOINT, AWS_IOT_SUBSCRIBE_TOPIC);
 }
 

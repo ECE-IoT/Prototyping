@@ -24,5 +24,5 @@ config/docs/docs-path.yml
 config/env/env.ini
 
 # ENTER ALL SECRETS!
-code/aws/examples/onboard-certs/secrets-esp32-d1mini-01.h
-code/aws/examples/onboard-certs/secrets-wifi-home.h
+code/aws/onboard-certificates/secrets/device-secrets.h
+secrets/wifi-secrets.h

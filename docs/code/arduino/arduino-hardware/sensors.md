@@ -36,7 +36,7 @@
 
 ## Soil Sensor
 
-- expensiv version
+- inexpensiv version
 - Type of Sensor: Soil/Moisture
 - Provider: DFRobot 
 - Library: no Library needed (analog measuremnt)
@@ -90,3 +90,32 @@
 - Supplier: Amazon
 - Price: 2,35€
 > can orderd [here](https://www.amazon.de/Regensensor-SODIAL-Regenwasser-Modul-Erkennung-Wie-gezeigt/dp/B01D9JCK6K/ref=pd_sbs_6/257-7506484-9050519?pd_rd_w=BGOVU&pf_rd_p=b2a25e73-6e6a-41bb-a7ce-5f2d2342b819&pf_rd_r=5WBDCFHQYR7HF7ZYX707&pd_rd_r=f70bbba8-3b1a-487c-9c98-3776d813dbc0&pd_rd_wg=EpnoP&pd_rd_i=B01D9JCK6K&psc=1)
+
+
+## Beispielanwendung 1 
+
+Hier soll eine Zimmerpflanze überwacht werden. Hierzu kann die Feuchtigkeit, und der PH-Wert der Erde gemessen werden. Ebenso soll die Lichteinstrahlung auf die Zimmerpflanze gemesen werden.
+
+Benötigte Sensoren:
+  - Soil Sensor (Bodenfeuchte)
+  - EZO-ph (PH-Wert der Erde)
+  - VEML7700 (Lichteinstrahlung)
+
+ungefährer Preis: ~60€
+
+## Beispielanwendung 2
+
+Hier soll eine Wetterstation errichtet werden welche folgende Messungen durchführt:
+
+- Windstärke
+- Lufttemperatur
+- Luftfeuchte
+- Pollenbelastung
+
+Benötigte Sensoren:
+  - Anemometer (Windstärke)
+  - DT21 (Luftfeuchte, Lufttemperatur)
+  - PMSA0031I (Pollenbelastung)
+
+ungefährer Preis: ~95€
+

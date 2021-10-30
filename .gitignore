@@ -22,3 +22,7 @@ config/docs/docs-path.yml
 
 # env config for setting the src_filter correct
 config/env/env.ini
+
+# secrets
+code/aws/onboard-certificates/secrets/device-secrets.h
+secrets/wifi-secrets.h

@@ -6,9 +6,9 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../../../../../assets/logo.png" rel="icon"/>
-<meta content="mkdocs-1.2.2, mkdocs-material-7.3.0" name="generator"/>
+<meta content="mkdocs-1.2.3, mkdocs-material-7.3.5" name="generator"/>
 <title>Overview - ECE-IoT Prototyping</title>
-<link href="../../../../../assets/stylesheets/main.8b42a75e.min.css" rel="stylesheet"/>
+<link href="../../../../../assets/stylesheets/main.cdeb8541.min.css" rel="stylesheet"/>
 <link href="../../../../../assets/stylesheets/palette.3f5d1f46.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
@@ -119,7 +119,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../../../../aws/docs/administration/aws-iam/">
+<a class="md-tabs__link md-tabs__link--active" href="../../../../aws/administration/aws-iam/">
         Documentation
       </a>
 </li>
@@ -221,13 +221,33 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../aws/docs/administration/aws-iam/">
+<a class="md-nav__link" href="../../../../aws/administration/aws-iam/">
         IAM
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../aws/docs/administration/aws-cli/">
+<a class="md-nav__link" href="../../../../aws/administration/aws-cli/">
         CLI
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_2" id="__nav_3_1_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_1_2">
+          MQTT
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="MQTT" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_1_2">
+<span class="md-nav__icon md-icon"></span>
+          MQTT
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../aws/onboard-certificates/doc/connection-handler/">
+        TLS with OnBoard Certificates
       </a>
 </li>
 </ul>
@@ -329,7 +349,7 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../doc-aic-boards.md">
+<a class="md-nav__link" href="../doc-aic-example/">
         Example
       </a>
 </li>
@@ -348,14 +368,19 @@
           Hardware
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../arduino-hardware/sensors/">
+        Overview
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_2_1" id="__nav_3_2_2_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_2_2_1">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_2_2" id="__nav_3_2_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_2_2_2">
           Temperature and Humidity
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="Temperature and Humidity" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_3_2_2_1">
+<label class="md-nav__title" for="__nav_3_2_2_2">
 <span class="md-nav__icon md-icon"></span>
           Temperature and Humidity
         </label>
@@ -374,13 +399,13 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_2_2" id="__nav_3_2_2_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_2_2_2">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_2_3" id="__nav_3_2_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_2_2_3">
           Air
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="Air" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_3_2_2_2">
+<label class="md-nav__title" for="__nav_3_2_2_3">
 <span class="md-nav__icon md-icon"></span>
           Air
         </label>
@@ -400,9 +425,54 @@
         CO2
       </a>
 </li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_2_3_4" id="__nav_3_2_2_3_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_2_2_3_4">
+          Quality
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Quality" class="md-nav" data-md-level="5">
+<label class="md-nav__title" for="__nav_3_2_2_3_4">
+<span class="md-nav__icon md-icon"></span>
+          Quality
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../arduino-hardware/air-quality/PMSA003I/PMSA003I/">
-        Quality
+        PMSA003I
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../arduino-hardware/co2/CCS881/CCS881/">
+        CCS881
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../arduino-hardware/brightness/VEML7700/VEML7700/">
+        Luminance
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_2_5" id="__nav_3_2_2_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_2_2_5">
+          Soil
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Soil" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_3_2_2_5">
+<span class="md-nav__icon md-icon"></span>
+          Soil
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../arduino-hardware/ph-value/ezo-ph/EZO-pH/">
+        PH Value
       </a>
 </li>
 </ul>
@@ -602,7 +672,7 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../../assets/javascripts/workers/search.f8263e09.min.js", "version": null}</script>
-<script src="../../../../../assets/javascripts/bundle.4fc53ad4.min.js"></script>
+<script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+<script src="../../../../../assets/javascripts/bundle.1e84347e.min.js"></script>
 </body>
 </html>

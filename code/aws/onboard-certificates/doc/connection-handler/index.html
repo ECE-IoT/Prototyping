@@ -6,9 +6,9 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="../../../../../assets/logo.png" rel="icon"/>
-<meta content="mkdocs-1.2.2, mkdocs-material-7.3.0" name="generator"/>
-<title>CLI - ECE-IoT Prototyping</title>
-<link href="../../../../../assets/stylesheets/main.8b42a75e.min.css" rel="stylesheet"/>
+<meta content="mkdocs-1.2.3, mkdocs-material-7.3.5" name="generator"/>
+<title>TLS with OnBoard Certificates - ECE-IoT Prototyping</title>
+<link href="../../../../../assets/stylesheets/main.cdeb8541.min.css" rel="stylesheet"/>
 <link href="../../../../../assets/stylesheets/palette.3f5d1f46.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
@@ -22,7 +22,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#command-line-interface">
+<a class="md-skip" href="#esp32-connection-to-aws-iot-with-mqtt">
           Skip to content
         </a>
 </div>
@@ -46,7 +46,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              CLI
+              TLS with OnBoard Certificates
             
           </span>
 </div>
@@ -119,7 +119,7 @@
       </a>
 </li>
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../aws-iam/">
+<a class="md-tabs__link md-tabs__link--active" href="../../../administration/aws-iam/">
         Documentation
       </a>
 </li>
@@ -208,8 +208,8 @@
           AWS
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_1" id="__nav_3_1_1" type="checkbox"/>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_1" id="__nav_3_1_1" type="checkbox"/>
 <label class="md-nav__link" for="__nav_3_1_1">
           Administration
           <span class="md-nav__icon md-icon"></span>
@@ -221,18 +221,38 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../aws-iam/">
+<a class="md-nav__link" href="../../../administration/aws-iam/">
         IAM
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../administration/aws-cli/">
+        CLI
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1_2" id="__nav_3_1_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_1_2">
+          MQTT
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="MQTT" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_1_2">
+<span class="md-nav__icon md-icon"></span>
+          MQTT
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          CLI
+          TLS with OnBoard Certificates
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        CLI
+        TLS with OnBoard Certificates
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -241,9 +261,37 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#installation">
-    Installation
+<a class="md-nav__link" href="#tls-a-short-description">
+    TLS a short description
   </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuration-of-the-esp32-the-code">
+    Configuration of the ESP32 - The Code
+  </a>
+<nav aria-label="Configuration of the ESP32 - The Code" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#references">
+    References
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setting-up-aws">
+    Setting up AWS
+  </a>
+<nav aria-label="Setting up AWS" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#references_1">
+    References
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -294,7 +342,7 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../../arduino/arduino-iot-cloud/doc-aic-boards.md">
+<a class="md-nav__link" href="../../../../arduino/arduino-iot-cloud/docs/doc-aic-example/">
         Example
       </a>
 </li>
@@ -313,14 +361,19 @@
           Hardware
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../arduino/arduino-hardware/sensors/">
+        Overview
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_2_1" id="__nav_3_2_2_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_2_2_1">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_2_2" id="__nav_3_2_2_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_2_2_2">
           Temperature and Humidity
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="Temperature and Humidity" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_3_2_2_1">
+<label class="md-nav__title" for="__nav_3_2_2_2">
 <span class="md-nav__icon md-icon"></span>
           Temperature and Humidity
         </label>
@@ -339,13 +392,13 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_2_2" id="__nav_3_2_2_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_3_2_2_2">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_2_3" id="__nav_3_2_2_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_2_2_3">
           Air
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="Air" class="md-nav" data-md-level="4">
-<label class="md-nav__title" for="__nav_3_2_2_2">
+<label class="md-nav__title" for="__nav_3_2_2_3">
 <span class="md-nav__icon md-icon"></span>
           Air
         </label>
@@ -365,9 +418,54 @@
         CO2
       </a>
 </li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_2_3_4" id="__nav_3_2_2_3_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_2_2_3_4">
+          Quality
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Quality" class="md-nav" data-md-level="5">
+<label class="md-nav__title" for="__nav_3_2_2_3_4">
+<span class="md-nav__icon md-icon"></span>
+          Quality
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../arduino/arduino-hardware/air-quality/PMSA003I/PMSA003I/">
-        Quality
+        PMSA003I
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../arduino/arduino-hardware/co2/CCS881/CCS881/">
+        CCS881
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../arduino/arduino-hardware/brightness/VEML7700/VEML7700/">
+        Luminance
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2_2_5" id="__nav_3_2_2_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_2_2_5">
+          Soil
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Soil" class="md-nav" data-md-level="4">
+<label class="md-nav__title" for="__nav_3_2_2_5">
+<span class="md-nav__icon md-icon"></span>
+          Soil
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../../arduino/arduino-hardware/ph-value/ezo-ph/EZO-pH/">
+        PH Value
       </a>
 </li>
 </ul>
@@ -397,9 +495,37 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#installation">
-    Installation
+<a class="md-nav__link" href="#tls-a-short-description">
+    TLS a short description
   </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configuration-of-the-esp32-the-code">
+    Configuration of the ESP32 - The Code
+  </a>
+<nav aria-label="Configuration of the ESP32 - The Code" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#references">
+    References
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setting-up-aws">
+    Setting up AWS
+  </a>
+<nav aria-label="Setting up AWS" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#references_1">
+    References
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -408,28 +534,98 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/ECE-IoT/Prototyping/edit/master/docs/code/aws/docs/administration/aws-cli.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/ECE-IoT/Prototyping/edit/master/docs/code/aws/onboard-certificates/doc/connection-handler.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"></path></svg>
 </a>
-<h1 id="command-line-interface">Command Line Interface</h1>
-<p>The AWS CLI is an open source tool that enables the user to interact with AWS services using commands in the command-line shell. With the CLI basic functionality can be implemented and maintained. </p>
-<p><em>Link</em> to the <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html">docs</a></p>
-<p>The CLI can be used in the <code>Linux shell</code>, in the <code>Windows command line</code>and <code>Remotely</code>. There are different <strong>AWS CLI</strong> versions. The one used for <em>ECE IoT Prototyping</em> is Version <code>2.x</code>. </p>
-<h2 id="installation">Installation</h2>
-<p>The installations is described excellently in the <em>AWS DOCS</em></p>
-<p><code>Linux</code> <a href="https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html">installation</a></p>
-<p><code>macOS</code> <a href="https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-mac.html">installation</a></p>
-<p><code>Windows</code> <a href="https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-windows.html">installation</a></p>
-<hr/>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>Have a look <a href="https://www.w3schools.com/whatis/whatis_cli.asp">here</a> in order to understand what a CLI is!</p>
+<h1 id="esp32-connection-to-aws-iot-with-mqtt">ESP32 connection to AWS IoT with MQTT</h1>
+<p>The following part gives a brief overview on how to connect an ESP32 microcontroller to AWS IoT Core over MQTT with TLS.</p>
+<blockquote>
+<p>A detailed description can be found <a href="https://iot-esp32.workshop.aws/en/module1/getting_started.html">here</a></p>
+</blockquote>
+<h2 id="tls-a-short-description">TLS a short description</h2>
+<p>TLS [Transport Layer Security] is a encryption protocol which is used to ensure secure data transmission on the Internet. Basically, TLS consists of the two components <strong>TLS Handshake</strong> and <strong>TLS Record</strong>. During the <em>TLS Handshake</em> a secure key exchange and authentication of both communication partners takes place. The symmetric key negotiated by the <em>TLS Handshake</em> is then used in the <em>TLS Record</em> for data transmission. </p>
+<div class="admonition links">
+<p class="admonition-title">Links</p>
 </div>
+<ul>
+<li><a href="https://docs.aws.amazon.com/iot/latest/developerguide/transport-security.html">Data Protection for AWS</a></li>
+<li><a href="https://de.wikipedia.org/wiki/Transport_Layer_Security">TLS Overview</a></li>
+<li><a href="https://www.security-insider.de/was-ist-tls-transport-layer-security-a-673066/">TLS Overview German Version</a></li>
+</ul>
+<h2 id="configuration-of-the-esp32-the-code">Configuration of the ESP32 - The Code</h2>
+<p>In the <code>connection-handler.cpp</code> there are several helper methods which simplify the connection process to the WIFI and respectively to AWS IoT Core.</p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">initWiFi</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">ssid</span><span class="p">[],</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">pw</span><span class="p">[])</span><span class="w"></span>
+</code></pre></div>
+<p>This method handles the connection to the local WIFI. It won't check the connection again if it's established once. This method is just used for setting everything up. </p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">initAWS</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">endpoint</span><span class="p">[],</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">sup_topic</span><span class="p">[])</span><span class="w"></span>
+</code></pre></div>
+<p>This method configures a globally generated instance of <code>WiFiClientSecure</code> with the required certificates for a TLS connection. Those are:</p>
+<ul>
+<li>Certificate for the CA (Certification Authority)</li>
+<li>Device Certificate </li>
+<li>Private Device Key</li>
+</ul>
+<p>In the next step the instance of <code>WiFiClientSecure</code> will be passed to the <code>.begin()</code> method of a <code>MQTTClient</code> instance. In order to be able to receive MQTT messages from the <em>AWS broker</em> the next step is to register a <code>callback</code> function for the MQTT client. Next the MQTT connection is going to be established. The last step is the subscription to the given topic. </p>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">pubToAWS</span><span class="p">(</span><span class="kt">char</span><span class="w"> </span><span class="n">message</span><span class="p">[],</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="n">topic</span><span class="p">[])</span><span class="w"></span>
+</code></pre></div>
+<p>This functions use is to simplify the task of publishing a new payload to a certain topic. For the example given the payload is just a <code>char</code> string. Later on there can be anything passed as the payload for this function. </p>
+<h3 id="references">References</h3>
+<div class="admonition links">
+<p class="admonition-title">Links</p>
+</div>
+<ul>
+<li><a href="https://github.com/aws-samples/aws-iot-esp32-arduino-examples">Example Code given by AWS</a></li>
+</ul>
+<h2 id="setting-up-aws">Setting up AWS</h2>
+<p>Every step of configuration is done in the <em>AWS IoT Core console</em>. The following list shows the necessary step which need to be done in order to connect the ESP</p>
+<ol>
+<li>Create a policy with a name for the desired types of devices. Example Policy could look like this: </li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">"Version"</span><span class="p">:</span> <span class="s2">"2012-10-17"</span><span class="p">,</span>
+    <span class="nt">"Statement"</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">"Effect"</span><span class="p">:</span> <span class="s2">"Allow"</span><span class="p">,</span>
+            <span class="nt">"Action"</span><span class="p">:</span> <span class="s2">"iot:Connect"</span><span class="p">,</span>
+            <span class="nt">"Resource"</span><span class="p">:</span> <span class="s2">"arn:aws:iot:REGION:ACCOUNT_ID:client/${iot:Connection.Thing.ThingName}"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">"Effect"</span><span class="p">:</span> <span class="s2">"Allow"</span><span class="p">,</span>
+            <span class="nt">"Action"</span><span class="p">:</span> <span class="s2">"iot:Subscribe"</span><span class="p">,</span>
+            <span class="nt">"Resource"</span><span class="p">:</span> <span class="s2">"arn:aws:iot:REGION:ACCOUNT_ID:topicfilter/esp32/sub"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">"Effect"</span><span class="p">:</span> <span class="s2">"Allow"</span><span class="p">,</span>
+            <span class="nt">"Action"</span><span class="p">:</span> <span class="s2">"iot:Receive"</span><span class="p">,</span>
+            <span class="nt">"Resource"</span><span class="p">:</span> <span class="s2">"arn:aws:iot:REGION:ACCOUNT_ID:topic/esp32/sub"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">"Effect"</span><span class="p">:</span> <span class="s2">"Allow"</span><span class="p">,</span>
+            <span class="nt">"Action"</span><span class="p">:</span> <span class="s2">"iot:Publish"</span><span class="p">,</span>
+            <span class="nt">"Resource"</span><span class="p">:</span> <span class="s2">"arn:aws:iot:REGION:ACCOUNT_ID:topic/esp32/pub"</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+<ol>
+<li>On the IoT Core site download and test the connection kit</li>
+<li>Path: "Onboard/Onboard a Device/Get started"</li>
+<li>Choose suited environment (in the current case: Linux/OSX with <code>python</code>)</li>
+<li>Download and follow instructions </li>
+<li>Add a "thing" (Objekt) in the <code>tab</code>: <em>Manage/things/thing_name</em> with a chosen <em>thing_name</em>.</li>
+<li>Click onto the created thing -&gt; actions/attach a policy -&gt; select the policy name chosen above. </li>
+</ol>
+<h3 id="references_1">References</h3>
+<div class="admonition links">
+<p class="admonition-title">Links</p>
+</div>
+<ul>
+<li><a href="https://iot-esp32.workshop.aws/en/module1/getting_started.html#configure-aws-iot-librarys-sample-code-to-work-with-our-esp32">AWS Policy and thing config</a></li>
+</ul>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      Last update: 2021-10-20
+      Last update: 2021-10-30
     
   </small>
 </div>
@@ -443,7 +639,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: IAM" class="md-footer__link md-footer__link--prev" href="../aws-iam/" rel="prev">
+<a aria-label="Previous: CLI" class="md-footer__link md-footer__link--prev" href="../../../administration/aws-cli/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
 </div>
@@ -452,7 +648,7 @@
 <span class="md-footer__direction">
                 Previous
               </span>
-              IAM
+              CLI
             </div>
 </div>
 </a>
@@ -487,7 +683,7 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../../assets/javascripts/workers/search.f8263e09.min.js", "version": null}</script>
-<script src="../../../../../assets/javascripts/bundle.4fc53ad4.min.js"></script>
+<script id="__config" type="application/json">{"base": "../../../../..", "features": ["navigation.tabs", "navigation.top"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+<script src="../../../../../assets/javascripts/bundle.1e84347e.min.js"></script>
 </body>
 </html>

@@ -19,7 +19,8 @@ nav:
               - Boards: code/arduino/arduino-iot-cloud/docs/doc-aic-boards.md
               - Example: code/arduino/arduino-iot-cloud/docs/doc-aic-example.md
           - Hardware:
-              - Overview: code/arduino/arduino-hardware/sensors.md
+              - Overview:
+                  - Ordered sensors: code/arduino/arduino-hardware/orderd_sensors.md
               - Temperature and Humidity:
                   - Soil Sensor: code/arduino/arduino-hardware/temperature-humidity/soil-sensor/soil-sensor.md
                   - DHT11: code/arduino/arduino-hardware/temperature-humidity/dht11/docs/dht11.md

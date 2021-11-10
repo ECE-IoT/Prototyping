@@ -2,6 +2,12 @@
 #include "Adafruit_VEML7700.h"
 #include "Adafruit_seesaw.h"
 
+// pip3 install platformio
+// platformio lib search "header:Adafruit_Sensor.h"
+// pio lib install "Adafruit Unified Sensor"
+// pio lib install "DHT-Sensor"
+
+
 Adafruit_VEML7700 veml = Adafruit_VEML7700();
 Adafruit_seesaw ss;
 

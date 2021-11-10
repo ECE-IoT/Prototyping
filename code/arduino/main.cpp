@@ -1,4 +1,4 @@
-#include "Arduino.h"
+#include <Arduino.h>
 #include "Adafruit_VEML7700.h"
 #include "Adafruit_seesaw.h"
 
@@ -7,7 +7,7 @@ Adafruit_seesaw ss;
 
 void setup()
 {
-  Serial.begin(115200);
+  Serial.begin(9600);
   Serial.println("Adafruit VEML7700 & Soil Sensor Test");
 
   while (!Serial)

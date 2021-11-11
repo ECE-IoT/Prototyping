@@ -34,6 +34,7 @@ void exampleSetup()
 {
   dht_2.begin();
   pinMode(LEDPIN, OUTPUT);
+  digitalWrite(LEDPIN, HIGH);
 
   // Initialize serial and wait for port to open:
   Serial.begin(9600);
@@ -89,5 +90,5 @@ void exampleLoop()
 void onMkr1010LedChange()
 {
   // Add your code here to act upon Mkr1010Led change
-  digitalWrite(LEDPIN, mkr1010_led);
+  digitalWrite(LEDPIN, !mkr1010_led);
 }

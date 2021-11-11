@@ -5,7 +5,7 @@
 #include "arduino_secrets.h"
 
 // The THING_ID can be found in the sharepoint fodler under: Dateien\Administration\Arduino IoT Cloud\Wifi and thing id.txt
-const char THING_ID[] = "";
+const char THING_ID[] = "31791791-d3c0-4909-8987-20943af57de7";
 
 const char SSID[]     = SECRET_SSID;    // Network SSID (name)
 const char PASS[]     = SECRET_PASS;    // Network password (use for WPA, or use as key for WEP)

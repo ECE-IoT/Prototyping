@@ -25,4 +25,5 @@ config/env/env.ini
 
 # secrets
 code/aws/onboard-certificates/secrets/device-secrets.h
-secrets/
+secrets/wifi-secrets.h
+data/

@@ -9,7 +9,7 @@
 void callback(String& topic, String& payload);
 
 WiFiClientSecure net_client = WiFiClientSecure();
-MQTTClient mqtt_client      = MQTTClient(256);
+MQTTClient mqtt_client      = MQTTClient(256); // Warum 256?
 
 void initWIFI(char ssid[], char pw[])
 {

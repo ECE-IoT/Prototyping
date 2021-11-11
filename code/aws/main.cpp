@@ -10,6 +10,8 @@
 void setup()
 {
   Serial.begin(9600);
+  Serial.println(H_WIFI_PASSWORD H_WIFI_SSID);
+  Serial.println(xPortGetCoreID());
   initWIFI(H_WIFI_SSID, H_WIFI_PASSWORD);
   initAWS(AWS_IOT_ENDPOINT, AWS_IOT_SUBSCRIBE_TOPIC);
 }

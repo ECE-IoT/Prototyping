@@ -17,7 +17,8 @@ nav:
               - Getting Started: code/arduino/arduino-iot-cloud/docs/doc-aic-getting-started.md
               - Overview: code/arduino/arduino-iot-cloud/docs/doc-aic-overview.md
               - Boards: code/arduino/arduino-iot-cloud/docs/doc-aic-boards.md
-              - Example: code/arduino/arduino-iot-cloud/docs/doc-aic-example.md
+              - Example: code/arduino/arduino-iot-cloud/docs/doc-aic-boards.md
+              - Procedure: code/arduino/arduino-iot-cloud/docs/doc-aic-procedure.md
           - Hardware:
               - Overview:
                   - Ordered sensors: code/arduino/arduino-hardware/orderd_sensors.md

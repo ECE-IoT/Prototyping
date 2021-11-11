@@ -12,6 +12,7 @@ The repository is structured into different development sections.
 Here every piece of code is situated. Every sub-directory represents an own [PlatformIO](https://platformio.org), Python for AWS, etc project. 
 
 **PlatformIO**
+
 If the sub-directory represents a PlatformIO project the structure should **always** be the following:
 
 - sub-dir

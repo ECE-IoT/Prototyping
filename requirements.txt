@@ -1,0 +1,12 @@
+mkdocs-material
+mkdocs-plugin-mermaid
+mkdocs_pymdownx_material_extras
+mkdocs-git-revision-date-plugin
+mkdocs-mermaid2-plugin
+mkdocstrings
+pyserial
+boto3
+serial
+esptool
+pyopenssl
+simple_term_menu

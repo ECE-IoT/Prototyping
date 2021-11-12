@@ -17,8 +17,10 @@ If the sub-directory represents a PlatformIO project the structure should **alwa
 
 - sub-dir
   - .pio (auto-generated)
-  - .vscode
+  - .vscode (partially auto-generated)
   - code 
+  - data
+  - scripts
   - secrets
   - platformio.ini
 
@@ -32,3 +34,10 @@ This folder contains the doc files for the **github pages** of this project. **I
 
 Here all the essential scripts for setting up new projects within the repository or generating the docs are stored!
 
+## Setup
+
+In order to get everything running the first step after cloning the repository is to install all python modules
+
+```shell
+pip3 install -r requirements.txt
+```

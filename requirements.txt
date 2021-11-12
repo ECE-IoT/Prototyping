@@ -6,3 +6,7 @@ mkdocs-mermaid2-plugin
 mkdocstrings
 pyserial
 boto3
+serial
+esptool
+pyopenssl
+simple_term_menu

@@ -1,23 +1,7 @@
-# arduino project .gitignore
-
-/code/arduino/.pio
-/code/arduino/.vscode/c_cpp_properties.json
-/code/arduino/.vscode/launch.json
-/code/arduino/secrets
-
-# aws project .gitignore
-
-/code/aws/.pio
-/code/aws/.vscode/c_cpp_properties.json
-/code/aws/.vscode/launch.json
-/code/aws/secrets
-
-# hardware project .gitignore
-
-/code/hardware/.pio
-/code/hardware/.vscode/c_cpp_properties.json
-/code/hardware/.vscode/launch.json
-/code/hardware/secrets
+**/.pio
+**/.vscode/c_cpp_properties.json
+**/.vscode/launch.json
+**/secrets
 
 # exclude Apple Specific files
 **./DS_Store

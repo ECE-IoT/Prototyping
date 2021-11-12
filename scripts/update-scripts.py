@@ -27,7 +27,6 @@ def get_code_script_path():
 
 def update_scripts():
     script_folder = get_code_script_path()
-    print(script_folder)
     sub_scripts = os.listdir(SUB_SCRIPTS)
     sub_scripts_folders = list()
     for sbs in sub_scripts:

@@ -44,4 +44,17 @@ pip3 install -r requirements.txt
 
 ## Embedded development
 
-The process of development takes place in the mentioned sub folder structure. 
+### `C++` Development
+
+The process of development takes place in the mentioned sub folder structure. Open the certain sub category in an own VSCode Window, this ensures that PlatformIO will detect the right `.ini` file 
+
+### Usage of Authentication files
+
+If there is the need of using SPIFFs on the `ESP32` all files need to be converted to **binary** format. In order to convert the `.pem`, `.key` or `.crt` files correctly the python script `generate-certs.py` can be utilized. 
+
+Process of conversion:
+
+1. create (if not already existing) the directory `/data` in your file-tree
+2. add the device-key, the private-key and the rootCA file to the `/data` directory 
+3. run the script with `generate-certs.py`
+4. use PlatformIO to upload `/data` to the *ESP32*

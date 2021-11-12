@@ -41,3 +41,7 @@ In order to get everything running the first step after cloning the repository i
 ```shell
 pip3 install -r requirements.txt
 ```
+
+## Embedded development
+
+The process of development takes place in the mentioned sub folder structure. 

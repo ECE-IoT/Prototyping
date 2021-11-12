@@ -57,7 +57,7 @@ if __name__ == "__main__":
     try:
         print("--> copying file tree")
         copytree(SRC_DOCS_PATH, MKDOCS_PATH, ignore=ignore_patterns(
-            '*.cpp', '*.hpp', '*.c', '*.h', '*.json', '*.DS_Store'))
+            '*.cpp', '*.hpp', '*.c', '*.h', '*.json', '*.DS_Store', '.ini', '.py', '.pio'))
         print("--> remove empty directories")
         rm_empty_dir()
         print("--> done \n")

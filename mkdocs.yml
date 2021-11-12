@@ -8,20 +8,20 @@ nav:
   - Documentation:
       - AWS:
           - Administration:
-              - IAM: code/aws/administration/aws-iam.md
-              - CLI: code/aws/administration/aws-cli.md
+              - IAM: code/aws/src/administration/aws-iam.md
+              - CLI: code/aws/src/administration/aws-cli.md
           - MQTT:
-              - TLS with OnBoard Certificates: code/aws/onboard-certificates/doc/connection-handler.md
+              - TLS with OnBoard Certificates: code/aws/src/onboard-certificates/doc/connection-handler.md
       - Arduino:
           - IoT Cloud:
-              - Getting Started: code/arduino/arduino-iot-cloud/docs/doc-aic-getting-started.md
+              - Getting Started: code/arduino/src/arduino-iot-cloud/docs/doc-aic-getting-started.md
               - Overview: code/arduino/arduino-iot-cloud/docs/doc-aic-overview.md
-              - Boards: code/arduino/arduino-iot-cloud/docs/doc-aic-boards.md
-              - Example: code/arduino/arduino-iot-cloud/docs/doc-aic-boards.md
-              - Procedure: code/arduino/arduino-iot-cloud/docs/doc-aic-procedure.md
+              - Boards: code/arduino/src/arduino-iot-cloud/docs/doc-aic-boards.md
+              - Example: code/arduino/src/arduino-iot-cloud/docs/doc-aic-example.md
+              - Procedure: code/arduino/src/arduino-iot-cloud/docs/doc-aic-procedure.md
           - Hardware:
               - Overview:
-                  - Ordered sensors: code/arduino/arduino-hardware/orderd_sensors.md
+                  - Ordered sensors: code/hardware/src/overview/orderd_sensors.md
               - Temperature and Humidity:
                   - Soil Sensor: code/arduino/arduino-hardware/temperature-humidity/soil-sensor/soil-sensor.md
                   - DHT11: code/arduino/arduino-hardware/temperature-humidity/dht11/docs/dht11.md

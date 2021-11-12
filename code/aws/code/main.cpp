@@ -18,6 +18,6 @@ void setup()
 
 void loop()
 {
-  pubToAWS("Hello World", AWS_IOT_PUBLISH_TOPIC);
+  // pubToAWS("Hello World", AWS_IOT_PUBLISH_TOPIC);
   delay(1000);
 }

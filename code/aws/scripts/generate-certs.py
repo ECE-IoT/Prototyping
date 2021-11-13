@@ -24,7 +24,7 @@ def create_term_menu(options: list()):
     return term_menu.show()
 
 
-def convert_pem_to_der():
+def convert_pem_to_der(cert_type):
     files = os.listdir(CERT_PATH)
     assert files, "--> no files found, pleas add certification files to /data"
 
@@ -36,10 +36,7 @@ def convert_pem_to_der():
                     crypto.FILETYPE_PEM, cert_file.read())
                 cert_der = crypto.dump_certificate(
                     crypto.FILETYPE_ASN1, cert_pem)
-                if file.endswith('.pem'):
-                    write(file_path, cert_der, 'device-key')
-                else:
-                    write(file_path, cert_der, 'root-key')
+                check_file_type(file, cert_type, file_path, cert_der)
         elif file.endswith('.key'):
             with open(file_path, 'rb') as cert_file:
                 cert_pem = crypto.load_privatekey(
@@ -49,6 +46,17 @@ def convert_pem_to_der():
                 write(file_path, cert_der, 'private-key')
         else:
             print(f"--> file {file} ALREADY to BINARY converted")
+
+
+def check_file_type(file, cert_type, file_path, cert):
+    if file.endswith('.pem') and not cert_type:
+        write(file_path, cert, 'root-key')
+    elif file.endswith('.crt') and not cert_type:
+        write(file_path, cert, 'device-key')
+    elif file.endswith('.pem') and cert_type:
+        write(file_path, cert, 'device-key')
+    elif file.endswith('.crt') and cert_type:
+        write(file_path, cert, 'root-key')
 
 
 def write(file_path, cert_der, name):
@@ -66,5 +74,7 @@ if __name__ == "__main__":
 
     print('--> Do you want to convert .pem files?')
     if create_term_menu(check) == 0:
-        print('--> Conversion started \n')
-        convert_pem_to_der()
+        print('--> Does amazon root CA end with .pem?')
+        convert_pem_to_der(create_term_menu(check))
+    else:
+        print('--> noting converted')

@@ -24,17 +24,6 @@ def create_term_menu(options: list()):
     return term_menu.show()
 
 
-def list_connected_usb_devices():
-    all_ports = list()
-    for ap, _, _ in list_ports.comports():
-        all_ports.append(ap)
-    return all_ports
-
-
-def get_device_id(mac):
-    return ''.join(map(lambda x: '%02x' % x, mac))
-
-
 def convert_pem_to_der():
     files = os.listdir(CERT_PATH)
     assert files, "--> no files found, pleas add certification files to /data"
@@ -69,13 +58,6 @@ def write(file_path, cert_der, name):
         print(
             f"--> {file_path.split('/data')[1]} to BINARY {(name + '.der')} converted")
         os.remove(file_path)
-
-
-def flash_esp32(port):
-    esp32 = esptool.ESP32ROM(port)
-    esp32.connect()
-    esp32.erase_flash()
-    print(esp32)
 
 
 if __name__ == "__main__":

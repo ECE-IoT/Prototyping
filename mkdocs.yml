@@ -4,7 +4,7 @@ nav:
   - Tutorials:
       - C++: tutorials/guides/cpp-coding-style.md
       - Git: tutorials/guides/git-commit-style.md
-      - Prototyping Guide: tutorials/guides/prototyping-guide.md
+      - Structure: tutorials/guides/structure.md
   - Documentation:
       - AWS:
           - Administration:
@@ -19,22 +19,21 @@ nav:
               - Boards: code/arduino/src/arduino-iot-cloud/docs/doc-aic-boards.md
               - Example: code/arduino/src/arduino-iot-cloud/docs/doc-aic-example.md
               - Procedure: code/arduino/src/arduino-iot-cloud/docs/doc-aic-procedure.md
-          - Hardware:
-              - Overview:
-                  - Ordered sensors: code/hardware/src/overview/orderd_sensors.md
-              - Temperature and Humidity:
-                  - Soil Sensor: code/arduino/arduino-hardware/temperature-humidity/soil-sensor/soil-sensor.md
-                  - DHT11: code/arduino/arduino-hardware/temperature-humidity/dht11/docs/dht11.md
-              - Air:
-                  - Velocity: code/arduino/arduino-hardware/wind-velocity/anemometer/Anemometer.md
-                  - Pressure: code/arduino/arduino-hardware/air-pressure/LPS25HB/LPS25HB.md
-                  - CO2: code/arduino/arduino-hardware/co2/CCS881/CCS881.md
-                  - Quality:
-                      - PMSA003I: code/arduino/arduino-hardware/air-quality/PMSA003I/PMSA003I.md
-                      - CCS881: code/arduino/arduino-hardware/co2/CCS881/CCS881.md
-              - Luminance: code/arduino/arduino-hardware/brightness/VEML7700/VEML7700.md
-              - Soil:
-                  - PH Value: code/arduino/arduino-hardware/ph-value/ezo-ph/EZO-pH.md
+      - Hardware:
+          - Overview:
+              - Ordered sensors: code/hardware/src/overview/orderd_sensors.md
+          - Temperature and Humidity:
+              - DHT11: code/hardware/src/temperature-humidity/dht11/docs/dht11.md
+          - Air:
+              - Velocity: code/hardware/src/air/anemometer/Anemometer.md
+              - Pressure: code/hardware/src/air/LPS25HB/LPS25HB.md
+              - Quality:
+                  - PMSA003I: code/hardware/src/air/PMSA003I/PMSA003I.md
+                  - CCS881: code/hardware/src/air/CCS881/CCS881.md
+          - Luminance: code/hardware/src/brightness/VEML7700/VEML7700.md
+          - Soil:
+              - Moisture Sensor: code/hardware/src/temperature-humidity/soil-sensor/soil-sensor.md
+              - PH Value: code/hardware/src/ph-value/ezo-ph/EZO-pH.md
 
 repo_url: https://github.com/ECE-IoT/Prototyping
 

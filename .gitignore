@@ -2,6 +2,7 @@
 **/.vscode/c_cpp_properties.json
 **/.vscode/launch.json
 **/secrets
+**/data
 
 # exclude Apple Specific files
 **./DS_Store

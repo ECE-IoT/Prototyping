@@ -24,18 +24,7 @@ def create_term_menu(options: list()):
     return term_menu.show()
 
 
-def list_connected_usb_devices():
-    all_ports = list()
-    for ap, _, _ in list_ports.comports():
-        all_ports.append(ap)
-    return all_ports
-
-
-def get_device_id(mac):
-    return ''.join(map(lambda x: '%02x' % x, mac))
-
-
-def convert_pem_to_der():
+def convert_pem_to_der(cert_type):
     files = os.listdir(CERT_PATH)
     assert files, "--> no files found, pleas add certification files to /data"
 
@@ -47,10 +36,7 @@ def convert_pem_to_der():
                     crypto.FILETYPE_PEM, cert_file.read())
                 cert_der = crypto.dump_certificate(
                     crypto.FILETYPE_ASN1, cert_pem)
-                if file.endswith('.pem'):
-                    write(file_path, cert_der, 'device-key')
-                else:
-                    write(file_path, cert_der, 'root-key')
+                check_file_type(file, cert_type, file_path, cert_der)
         elif file.endswith('.key'):
             with open(file_path, 'rb') as cert_file:
                 cert_pem = crypto.load_privatekey(
@@ -62,6 +48,17 @@ def convert_pem_to_der():
             print(f"--> file {file} ALREADY to BINARY converted")
 
 
+def check_file_type(file, cert_type, file_path, cert):
+    if file.endswith('.pem') and not cert_type:
+        write(file_path, cert, 'root-key')
+    elif file.endswith('.crt') and not cert_type:
+        write(file_path, cert, 'device-key')
+    elif file.endswith('.pem') and cert_type:
+        write(file_path, cert, 'device-key')
+    elif file.endswith('.crt') and cert_type:
+        write(file_path, cert, 'root-key')
+
+
 def write(file_path, cert_der, name):
     path = os.path.join(BASE_PATH, 'data', (name + '.der'))
     with open(path, 'wb') as cert_file_der:
@@ -71,18 +68,13 @@ def write(file_path, cert_der, name):
         os.remove(file_path)
 
 
-def flash_esp32(port):
-    esp32 = esptool.ESP32ROM(port)
-    esp32.connect()
-    esp32.erase_flash()
-    print(esp32)
-
-
 if __name__ == "__main__":
     print(f"\033[90m{__doc__}\033[0m", end="\n")
     check = ["YES", "NO"]
 
     print('--> Do you want to convert .pem files?')
     if create_term_menu(check) == 0:
-        print('--> Conversion started \n')
-        convert_pem_to_der()
+        print('--> Does amazon root CA end with .pem?')
+        convert_pem_to_der(create_term_menu(check))
+    else:
+        print('--> noting converted')

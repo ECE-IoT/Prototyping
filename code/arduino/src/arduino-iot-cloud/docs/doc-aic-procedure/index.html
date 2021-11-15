@@ -319,49 +319,30 @@
 <a class="md-nav__link" href="#general-procedure">
     General procedure
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#thinproperties">
-    thinProperties
-  </a>
-<nav aria-label="thinProperties" class="md-nav">
+<nav aria-label="General procedure" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#properties">
-    Properties
+<a class="md-nav__link" href="#thingproperties">
+    ThingProperties
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#thingid">
-    ThingID
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#begin">
-    begin()
+<a class="md-nav__link" href="#main">
+    Main
   </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#update">
-    update()
-  </a>
-<nav aria-label="update()" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#watchdog">
-    watchdog
+<a class="md-nav__link" href="#connection-from-device-to-cloud-and-security">
+    Connection from device to cloud and security
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#statemachine">
-    statemachine
+<a class="md-nav__link" href="#encoding-of-the-mqtt-data-and-topic">
+    Encoding of the MQTT Data and Topic
   </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -528,49 +509,30 @@
 <a class="md-nav__link" href="#general-procedure">
     General procedure
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#thinproperties">
-    thinProperties
-  </a>
-<nav aria-label="thinProperties" class="md-nav">
+<nav aria-label="General procedure" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#properties">
-    Properties
+<a class="md-nav__link" href="#thingproperties">
+    ThingProperties
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#thingid">
-    ThingID
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#begin">
-    begin()
+<a class="md-nav__link" href="#main">
+    Main
   </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#update">
-    update()
-  </a>
-<nav aria-label="update()" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#watchdog">
-    watchdog
+<a class="md-nav__link" href="#connection-from-device-to-cloud-and-security">
+    Connection from device to cloud and security
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#statemachine">
-    statemachine
+<a class="md-nav__link" href="#encoding-of-the-mqtt-data-and-topic">
+    Encoding of the MQTT Data and Topic
   </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -584,45 +546,55 @@
 </a>
 <h1 id="arduino-iot-cloud-procedure-on-device">Arduino IoT Cloud procedure on device</h1>
 <h2 id="general-procedure">General procedure</h2>
-<p><strong>ThingProperties</strong></p>
+<h3 id="thingproperties">ThingProperties</h3>
 <p>In the file thingProperties.h the variables and callback functions are declared, a function initProperties() is defined and the WifiConnectionHandler is passed the SSID and the password of the Wifi. The function initProperties is used to create a property for each variable and to pass the ThingID to the ArduinoCloud obj.</p>
-<p><strong>Main</strong></p>
-<p>In der Main wird nun die Funktion initProperties() aufgerufen. Dannach wird die Funktion ArduinoCLoud.begin() aufgerufen. Diese Funktion dient grundlegend dazu den MQTT Client Broker adresse, topics und eine callback funktion, welche aufgerufen wird, wenn dieser eine Message vom broker erhalten hat.</p>
-<h2 id="thinproperties">thinProperties</h2>
-<h3 id="properties">Properties</h3>
-<p>A porperty is created for each variable. This contains e.g. the current value, the value that the cloud has, assigned callback functions, read/write permissions, update policy (every x second, on change).</p>
-<h3 id="thingid">ThingID</h3>
-<p>A unique ID for the thing created in the cloud. Used as a topic for MQTT.</p>
-<h3 id="begin">begin()</h3>
 <ul>
-<li>used in the Setup()</li>
+<li>Properties</li>
 </ul>
-<!-- Hier noch vom Zettel einfügen -->
-<h2 id="update">update()</h2>
-<p>Called in the loop at each loop pass. It includes the watchdog-reset and the statemachine</p>
-<h3 id="watchdog">watchdog</h3>
+<p>A porperty is created for each variable. This contains e.g. the current value, the value that the cloud has, assigned callback functions, read/write permissions, update policy (every x second, on change).</p>
+<ul>
+<li>ThingID</li>
+</ul>
+<p>A unique ID for the thing created in the cloud. Used as a topic for MQTT.</p>
+<h3 id="main">Main</h3>
+<ul>
+<li>setup()</li>
+</ul>
+<p>In the Main the function initProperties() is called. Then the function ArduinoCLoud.begin() is called. This function is basically used to pass the broker address, topics and a callback function to the MQTT client. The callback function is called when the MQTT client has received a message from the broker and processes it. Furthermore, the Crypto chip is woken up, the watchdog is started and it is checked if the firmware version of the wifi module is compatible.</p>
+<ul>
+<li>loop()</li>
+</ul>
+<p>At each loop pass the update() is called. This function is the central part of the continuously running program. When called, first the watchdog is reset and then a state machine is processed. Both points are described in the following.</p>
+<ul>
+<li>watchdog</li>
+</ul>
 <p>Used to reset the program if it got stuck somewhere.
 Specifically, a timer counts down a count and when this reaches 0, the device is automatically restarted.
 To ensure that the counter does not reach 0, it is reset each time update() is called.</p>
-<h3 id="statemachine">statemachine</h3>
-<p>Tasks:
-- Establish a Wifi connection.
-- Connect to the MQTT-Broker via TCP.
-- Subscribe to the (shadow and data) MQTT-Topic which is related to the thing id.
-- Get the values from the cloud via shadow topic.
-- Last state, in the connected state it is checked with each call if the variables have to be sent to the cloud according to the update policy. If this is the case, an MQTT package is sent to the cloud.</p>
-<p><strong>Connection from device to cloud and security</strong></p>
+<ul>
+<li>statemachine</li>
+</ul>
+<p>The tasks: Establish network connection, establish broker connection, subscribe to the topics and publish to the topic are divided into states and are processed one after the other. It should be noted that if the network connection is lost, the process simply starts again from the beginning. Therefore, in each state is a check of the connection.</p>
+<p>States:</p>
+<ul>
+<li>Establish a Wifi connection.</li>
+<li>Connect to the MQTT-Broker via TCP.</li>
+<li>Subscribe to the (shadow and data) MQTT-Topic which is related to the thing id.</li>
+<li>Get the values from the cloud via shadow topic.</li>
+<li>Last state, in the connected state it is checked with each call if the variables have to be sent to the cloud according to the update policy. If this is the case, an MQTT package is sent to the cloud.</li>
+</ul>
+<h2 id="connection-from-device-to-cloud-and-security">Connection from device to cloud and security</h2>
 <p>The device communicates with the cloud using MQTT messages, which are TCP encrypted. For the TCP encryption an implementation of BearSSL is used and specifically the versionTLS 1.2. For TLS a certificate is stored in the cryptochip. It was signed by Arduino and is used to authenticate the device. The encryption and decryption is completely outsourced to the cryptochip to save RAM.</p>
 <p>More information to the <a href="https://blog.arduino.cc/2020/07/02/arduino-security-primer/">security</a>
 MOre information to <a href="https://de.wikipedia.org/wiki/MQTT">MQTT</a></p>
-<p><strong>Encoding of the MQTT Data and Topic</strong></p>
+<h2 id="encoding-of-the-mqtt-data-and-topic">Encoding of the MQTT Data and Topic</h2>
 <p>Two topics exist for each device. A shadow topic and a data topic. The shadow topic is used to read the last variable values stored by the cloud at the beginning of the program and to store them in the properties. The data topic is used to send the data continuously to the cloud. All data to be sent is always encoded in a CBOR file and sent to the cloud together with a message. CBOR is similar to JSON, but more compact and a binary. It is specially designed to run on low power microcontrollers.</p>
 <p>More information to <a href="https://de.wikipedia.org/wiki/Concise_Binary_Object_Representation">CBOR</a></p>
 <hr/>
 <div class="md-source-date">
 <small>
     
-      Last update: 2021-11-12
+      Last update: 2021-11-15
     
   </small>
 </div>

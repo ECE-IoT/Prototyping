@@ -52,16 +52,3 @@ stateDiagram-v2
     }
 
 ```
-
-The symbolic state diagramm is there to picturize the basic functionality of the `AWS` class. In order to get a more direct perspective on how to implement the `class` the following **CLASS DIAGRAMM** can be taken into account. 
-
-```mermaid
-classDiagram
-    class BankAccount{
-        +String owner
-        +BigDecimal balance
-        +deposit(amount)
-        +withdrawl(amount)
-    }
-```
-

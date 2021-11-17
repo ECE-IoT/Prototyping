@@ -34,6 +34,9 @@ nav:
           - Soil:
               - Moisture Sensor: code/hardware/src/temperature-humidity/soil-sensor/soil-sensor.md
               - PH Value: code/hardware/src/ph-value/ezo-ph/EZO-pH.md
+      - Vertical Prototype:
+          - Code Structure:
+              - AWS: code/vertical-prototype/src/structural-planning/aws-class.md
 
 repo_url: https://github.com/ECE-IoT/Prototyping
 

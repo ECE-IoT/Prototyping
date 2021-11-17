@@ -3,6 +3,7 @@
 **/.vscode/launch.json
 **/secrets
 **/data
+/config/docs/**
 
 # exclude Apple Specific files
 **./DS_Store

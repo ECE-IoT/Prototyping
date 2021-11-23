@@ -1,26 +1,30 @@
-#include <Arduino.h>
+/*
+Examples of typical brightness levels:
+
+    at night: 0.5
+    street lighting: 10
+    living room: 50
+    hall lighting: 100
+    office room: 500
+    overcast Himmel: 5000
+    daylight: 10000
+    bright sky: 20000
+*/
+
 #include "Adafruit_VEML7700.h"
 #include "Adafruit_seesaw.h"
 
-// pip3 install platformio
-// platformio lib search "header:Adafruit_Sensor.h"
-// pio lib install "Adafruit Unified Sensor"
-// pio lib install "DHT-Sensor"
+#define gain 10
+#define integration_time 400 // in ms
+#define soil_moisture_level_low 689
+#define soil_moisture_level_high 314
 
-Adafruit_VEML7700 veml = Adafruit_VEML7700();
 Adafruit_seesaw ss;
+Adafruit_VEML7700 veml = Adafruit_VEML7700();
 
 void setup()
 {
-  Serial.begin(9600);
-  Serial.println("Adafruit VEML7700 & Soil Sensor Test");
-
-  while (!Serial)
-  {
-    delay(10);
-  }
-
-  /************Initial VEML7700****************/
+  Serial.begin(115200);
 
   if (!veml.begin())
   {
@@ -30,54 +34,9 @@ void setup()
   }
   Serial.println("Sensor found");
 
-  veml.setGain(VEML7700_GAIN_1);
-  veml.setIntegrationTime(VEML7700_IT_800MS);
-
-  Serial.print(F("Gain: "));
-  switch (veml.getGain())
-  {
-  case VEML7700_GAIN_1:
-    Serial.println("1");
-    break;
-  case VEML7700_GAIN_2:
-    Serial.println("2");
-    break;
-  case VEML7700_GAIN_1_4:
-    Serial.println("1/4");
-    break;
-  case VEML7700_GAIN_1_8:
-    Serial.println("1/8");
-    break;
-  }
-
-  Serial.print(F("Integration Time (ms): "));
-  switch (veml.getIntegrationTime())
-  {
-  case VEML7700_IT_25MS:
-    Serial.println("25");
-    break;
-  case VEML7700_IT_50MS:
-    Serial.println("50");
-    break;
-  case VEML7700_IT_100MS:
-    Serial.println("100");
-    break;
-  case VEML7700_IT_200MS:
-    Serial.println("200");
-    break;
-  case VEML7700_IT_400MS:
-    Serial.println("400");
-    break;
-  case VEML7700_IT_800MS:
-    Serial.println("800");
-    break;
-  }
-
-  veml.setLowThreshold(10000);
-  veml.setHighThreshold(20000);
+  veml.setGain(gain);
+  veml.setIntegrationTime(integration_time);
   veml.interruptEnable(true);
-
-  /************Initial Soil Sensor****************/
 
   if (!ss.begin(0x36))
   {
@@ -94,38 +53,22 @@ void setup()
 
 void loop()
 {
-  /************VEML7700****************/
-  Serial.println("Measurement brightness:");
-  Serial.print("Lux: ");
-  Serial.println(veml.readLux());
-  Serial.print("White: ");
-  Serial.println(veml.readWhite());
-  Serial.print("Raw ALS: ");
-  Serial.println(veml.readALS()); // rotes Umgebungslicht
-  Serial.println("");
+  float temperature = ss.getTemp();
+  int capacity = ss.touchRead(0);
+  int soil_moisture_percent = map(capacity, soil_moisture_level_low, soil_moisture_level_high, 100, 0);
 
-  uint16_t irq = veml.interruptStatus();
-  if (irq & VEML7700_INTERRUPT_LOW)
-  {
-    Serial.println("** Low threshold");
-  }
-  if (irq & VEML7700_INTERRUPT_HIGH)
-  {
-    Serial.println("** High threshold");
-  }
-  delay(100);
-
-  /************Soil Sensor****************/
-
-  float tempC = ss.getTemp();
-  uint16_t capread = ss.touchRead(0);
-
-  Serial.println("Measurement soil mositure & temperature:");
   Serial.print("Temperature: ");
-  Serial.print(tempC);
-  Serial.println("*C");
-  Serial.print("Capacitive: ");
-  Serial.println(capread);
+  Serial.print(temperature, 1);
+  Serial.println(" C°");
+
+  Serial.print("Brightness: ");
+  Serial.print(veml.readLux(), 1);
+  Serial.println(" lx");
+
+  Serial.print("Soil moisture: ");
+  Serial.print(soil_moisture_percent);
+  Serial.println(" %");
   Serial.println("");
-  delay(3000);
+
+  delay(2000);
 }

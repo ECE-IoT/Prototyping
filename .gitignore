@@ -4,6 +4,7 @@
 **/secrets
 **/data
 /config/docs/**
+platformio.ini
 
 # exclude Apple Specific files
 **./DS_Store

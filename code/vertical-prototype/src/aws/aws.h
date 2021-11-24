@@ -7,7 +7,6 @@
 #include <MQTTClient.h>
 #include <WiFiClientSecure.h>
 
-using namespace std;
 class AWS
 {
 private:
@@ -19,7 +18,7 @@ private:
   void configureMQTTClient(char endpoint[], uint16_t port, char device_name[]);
 
 public:
-  AWS(char endpoint[], uint16_t port, char device_name[]);
+  void begin(char endpoint[], uint16_t port, char device_name[]);
   void publish(String topic, int payload);
   void subscribe(String topic);
 };

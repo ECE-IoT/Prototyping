@@ -5,7 +5,7 @@
 #include <MQTTClient.h>
 #include <WiFiClientSecure.h>
 
-AWS::AWS(char endpoint[], uint16_t port, char device_name[])
+void AWS::begin(char endpoint[], uint16_t port, char device_name[])
 {
   configureTLSClient();
   configureMQTTClient(endpoint, port, device_name);
@@ -16,7 +16,7 @@ void AWS::configureTLSClient()
   tls_client = WiFiClientSecure();
   tls_client.setCACert(keys.getRootCA());
   tls_client.setPrivateKey(keys.getPrivateKey());
-  tls_client.setCertificate(keys.getDeviceKey());
+  tls_client.setCertificate(keys.getDeviceCert());
 }
 
 void AWS::configureMQTTClient(char endpoint[], uint16_t port, char device_name[])

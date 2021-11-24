@@ -5,17 +5,17 @@
 
 class Keys
 {
-private:
-  char* getKey(String path);
-  char private_key_[];
-  char device_key_[];
-  char root_ca_[];
+  public:
+    Keys();
+    char* getPrivateKey();
+    char* getDeviceCert();
+    char* getRootCA();
 
-public:
-  Keys();
-  char getPrivateKey();
-  char getDeviceKey();
-  char getRootCA();
-}
+  private:
+    char* getKey(String path);
+    char* private_key_;
+    char* device_cert_;
+    char* root_ca_;
+};
 
 #endif

@@ -1,29 +1,49 @@
 #include "keys.h"
 #include <Arduino.h>
+#include <SPIFFS.h>
 
 Keys::Keys()
 {
-  this->private_key_ = getKey("PrivatePath");
-  this->device_key_  = getKey("DevicePath");
-  this->root_ca_     = getKey("RootCAPath");
+  if(!SPIFFS.begin(true)){
+    Serial.println("An Error has occurred while mounting SPIFFS"); // Maybe implement a better error handling
+    return;
+  }
+
+  this->private_key_ = getKey("/esp32-d1mini-01.private.key"); // if we use a config file to configure the wifi we could also store these paths ther
+  this->device_cert_  = getKey("/esp32-d1mini-01.cert.pem");
+  this->root_ca_     = getKey("/root-CA.crt");
 }
 
-Keys::getPrivateKey()
+char* Keys::getPrivateKey()
 {
   return private_key_;
 }
 
-Keys::getDeviceKey()
+char* Keys::getDeviceCert()
 {
-  return device_key_;
+  return device_cert_;
 }
 
-Keys::getPrivateKey()
+char* Keys::getRootCA()
 {
   return root_ca_;
 }
 
-Keys::getKey(String path)
+char* Keys::getKey(String path)
 {
-  // read SPIFFS
+  File file = SPIFFS.open(path);
+
+  if(!file){
+    Serial.println("Failed to open file for reading. Fileame: ");
+    Serial.print(path);
+    return (char*)"\0";
+  }
+  size_t size = file.size();
+  
+  char* file_content = (char*)malloc((size+1) * sizeof(char)); //Allocate storage from the Heap to prevent stackoverflow
+
+  file.readBytes(file_content, size);
+  file_content[size] = '\0'; /// this is neccassary because at the end of the readed file there is an @ and not \n
+  file.close();
+  return file_content;
 }

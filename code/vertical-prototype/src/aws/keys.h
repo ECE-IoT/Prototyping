@@ -2,7 +2,6 @@
 #define VERT_PROT_KEYS
 
 #include <Arduino.h>
-
 class Keys
 {
   public:

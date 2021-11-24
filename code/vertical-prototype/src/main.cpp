@@ -1,4 +1,4 @@
-#include "aws.h"
+#include "aws/aws.h"
 #include <Arduino.h>
 
 void setup()

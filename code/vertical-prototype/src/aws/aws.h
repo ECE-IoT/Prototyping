@@ -8,21 +8,20 @@
 #include <WiFiClientSecure.h>
 
 using namespace std;
-
 class AWS
 {
 private:
   MQTTClient mqtt_client;
   WiFiClientSecure tls_client;
-  Keys key;
+  Keys keys;
 
   void configureTLSClient(void);
-  void configureMQTTClient(String endpoint[], uint16_t port, String device_name[]);
+  void configureMQTTClient(char endpoint[], uint16_t port, char device_name[]);
 
 public:
-  AWS(String endpoint[], uint16_t port, String device_name[]);
+  AWS(char endpoint[], uint16_t port, char device_name[]);
   void publish(String topic, int payload);
-  void subscribe(String topic, function<> callbackHandler);
-}
+  void subscribe(String topic);
+};
 
 #endif

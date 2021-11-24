@@ -2,20 +2,19 @@
 #define VERT_PROT_KEYS
 
 #include <Arduino.h>
-
 class Keys
 {
 private:
-  char* getKey(String path);
-  char private_key_[];
-  char device_key_[];
-  char root_ca_[];
+  const char* getKey(String path);
+  const char* private_key_;
+  const char* device_key_;
+  const char* root_ca_;
 
 public:
   Keys();
-  char getPrivateKey();
-  char getDeviceKey();
-  char getRootCA();
-}
+  const char* getPrivateKey();
+  const char* getDeviceKey();
+  const char* getRootCA();
+};
 
 #endif

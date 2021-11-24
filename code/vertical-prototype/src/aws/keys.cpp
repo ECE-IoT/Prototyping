@@ -8,22 +8,22 @@ Keys::Keys()
   this->root_ca_     = getKey("RootCAPath");
 }
 
-Keys::getPrivateKey()
+const char* Keys::getPrivateKey()
 {
   return private_key_;
 }
 
-Keys::getDeviceKey()
+const char* Keys::getDeviceKey()
 {
   return device_key_;
 }
 
-Keys::getPrivateKey()
+const char* Keys::getRootCA()
 {
   return root_ca_;
 }
 
-Keys::getKey(String path)
+const char* Keys::getKey(String path)
 {
   // read SPIFFS
 }

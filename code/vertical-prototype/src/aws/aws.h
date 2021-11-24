@@ -19,8 +19,8 @@ private:
 
 public:
   void begin(char endpoint[], uint16_t port, char device_name[]);
-  void publish(String topic, int payload);
-  void subscribe(String topic);
+  void publish(char topic[], const char* payload);
+  void subscribe(char topic[]);
 };
 
 #endif

@@ -11,7 +11,7 @@ private:
   char* root_ca_;
 
 public:
-  Keys();
+  void begin(void);
   char* getPrivateKey();
   char* getDeviceCert();
   char* getRootCA();

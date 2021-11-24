@@ -2,7 +2,7 @@
 #include <Arduino.h>
 #include <SPIFFS.h>
 
-Keys::Keys()
+void Keys::begin()
 {
   if (!SPIFFS.begin(true))
   {
@@ -10,10 +10,10 @@ Keys::Keys()
     return;
   }
 
-  this->private_key_ = getKey("/esp32-d1mini-01.private.key"); // if we use a config file to configure the wifi we could
-                                                               // also store these paths ther
-  this->device_cert_ = getKey("/esp32-d1mini-01.cert.pem");
-  this->root_ca_     = getKey("/root-CA.crt");
+  private_key_ = getKey("/esp32-d1mini-01.private.key"); // if we use a config file to configure the wifi we could
+                                                         // also store these paths ther
+  device_cert_ = getKey("/esp32-d1mini-01.cert.pem");
+  root_ca_     = getKey("/root-CA.crt");
 }
 
 char* Keys::getPrivateKey()

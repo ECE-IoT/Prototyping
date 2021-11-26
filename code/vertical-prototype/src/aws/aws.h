@@ -3,15 +3,14 @@
 
 #include "keys.h"
 #include <Arduino.h>
-#include <ArduinoJson.hpp>
-#include <MQTTClient.h>
+#include <MQTT.h>
 #include <WiFiClientSecure.h>
 
 class AWS
 {
 private:
-  MQTTClient mqtt_client;
-  WiFiClientSecure tls_client;
+  MQTTClient mqtt_client      = MQTTClient(1024);
+  WiFiClientSecure tls_client = WiFiClientSecure();
   Keys keys;
 
   void configureTLSClient(void);

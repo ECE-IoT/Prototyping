@@ -1,9 +1,12 @@
 #include "../secrets/wifi-secrets.h"
 #include "aws/aws.h"
+#include "sensor/iot-json-parser.h"
 #include <Arduino.h>
 
 AWS aws;
-const char* var = "25";
+Parser parser;
+const char* var = "234";
+char* payload;
 
 void setup()
 {
@@ -24,11 +27,14 @@ void setup()
 
   aws.begin("aq60dkt3q20bd-ats.iot.eu-central-1.amazonaws.com", 8883, "esp32-d1mini-01");
   aws.subscribe("esp32/sub");
+  delay(500);
 }
 
 void loop()
 {
   Serial.println("Publish");
-  aws.publish("esp32/pub", var);
-  delay(1000);
+  payload = parser.parseData("VEML", "LUX", 123.4);
+  Serial.println(payload);
+  aws.publish("esp32/pub", payload);
+  delay(2000);
 }

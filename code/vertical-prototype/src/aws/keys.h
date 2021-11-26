@@ -2,6 +2,7 @@
 #define VERT_PROT_KEYS
 
 #include <Arduino.h>
+#include <SPIFFS.h>
 class Keys
 {
 private:

@@ -1,6 +1,4 @@
 #include "keys.h"
-#include <Arduino.h>
-#include <SPIFFS.h>
 
 void Keys::begin()
 {

@@ -10,39 +10,29 @@ Examples of typical brightness levels:
     daylight: 10000
     bright sky: 20000
 */
+#include "classes.h"
 
-#include "Adafruit_VEML7700.h"
-#include "Adafruit_seesaw.h"
-
-#define gain 10
-#define integration_time 400 // in ms
-#define soil_moisture_level_low 689
-#define soil_moisture_level_high 314
-
-Adafruit_seesaw ss;
-Adafruit_VEML7700 veml = Adafruit_VEML7700();
+VEML7700 sensor_brightness;
+SoilMoisture sensor_moisture;
 
 void setup()
 {
-  Serial.begin(115200);
+  Serial.begin(9600);
 
   if (!veml.begin())
   {
     Serial.println("Sensor not found");
-    while (1)
-      ;
+    while(1);
   }
-  Serial.println("Sensor found");
-
+  
   veml.setGain(gain);
   veml.setIntegrationTime(integration_time);
   veml.interruptEnable(true);
-
+ 
   if (!ss.begin(0x36))
   {
     Serial.println("ERROR! seesaw not found");
-    while (1)
-      ;
+    while(1);
   }
   else
   {
@@ -53,22 +43,22 @@ void setup()
 
 void loop()
 {
-  float temperature = ss.getTemp();
-  int capacity = ss.touchRead(0);
-  int soil_moisture_percent = map(capacity, soil_moisture_level_low, soil_moisture_level_high, 100, 0);
-
-  Serial.print("Temperature: ");
-  Serial.print(temperature, 1);
-  Serial.println(" C°");
+  float brightness_lux = sensor_brightness.readBrightness();
+  float temperature_C = sensor_moisture.readTemp();
+  int soil_moisture_percent = sensor_moisture.readMoisture();
 
   Serial.print("Brightness: ");
-  Serial.print(veml.readLux(), 1);
+  Serial.print(brightness_lux, 1);
   Serial.println(" lx");
 
+  Serial.print("Temperature: ");
+  Serial.print(temperature_C, 1);
+  Serial.println(" C°");
+  
   Serial.print("Soil moisture: ");
   Serial.print(soil_moisture_percent);
   Serial.println(" %");
   Serial.println("");
-
+  
   delay(2000);
 }

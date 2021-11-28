@@ -36,10 +36,14 @@ For Platformio, go to **code** -> **vertical-prototype** and open the **platform
 platform = espressif32
 board = esp32dev
 framework = arduino
+lib_deps = 
+	https://github.com/256dpi/arduino-mqtt
 	arduino-libraries/NTPClient@^3.1.0
+	bblanchon/ArduinoJson@^6.18.5
 	adafruit/Adafruit seesaw Library@^1.5.2
 	adafruit/Adafruit VEML7700 Library@^1.1.1
-	adafruit/Adafruit Unified Sensor@^1.1.4 
+	adafruit/Adafruit Unified Sensor@^1.1.4
+	hwspeedy/DHT-Sensor@^1.4.3
 ```
 
-PlatformIO should automaticly select the right COM-port for the ESP32. After that, click on the **PlatformIO** symbol. You should now see a **esp32dev** folder wiht a drop down menu. Click **Build** to compile the Code. After successful compile click on **Upload** and the code will be uploaded to the ESP. On the right side of the Terminal, you can switch to the **Serial Monitor**. You should now see sensor values for temperature (C°), brightness (lx) and soil moisture (%).
+PlatformIO should automaticly select the right COM-port for the ESP32. After that, click on the **PlatformIO** symbol. You should now see a **esp32dev** folder wiht a drop down menu. Click **Build** to compile the Code. After successful compile click on **Upload** and the code will be uploaded to the ESP. There are various small icons above the Windows taskbar. Click on the *plug icon* to open the Serial Monitor. You should now see sensor values for temperature (C°), brightness (lx) and soil moisture (%).

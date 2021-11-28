@@ -5,8 +5,8 @@
 
 AWS aws;
 Parser parser;
-const char* var = "234";
-char* payload;
+const char *var = "234";
+char *payload;
 
 void setup()
 {

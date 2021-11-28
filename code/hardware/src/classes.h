@@ -27,9 +27,8 @@ class VEML7700
   
     float readBrightness()
     {
-      int capacity = ss.touchRead(0);
-      int moisture_value = map(capacity, soil_moisture_level_low, soil_moisture_level_high, 100, 0);
-      return moisture_value;  
+      float brightness_value = veml.readLux();
+      return brightness_value;
     }
 };
 

@@ -29,7 +29,7 @@ void AWS::configureMQTTClient(char endpoint[], uint16_t port, char device_name[]
   }
 }
 
-void AWS::publish(char topic[], const char* payload)
+void AWS::publish(char topic[], const char *payload)
 {
   mqtt_client.publish(topic, payload);
   mqtt_client.loop();

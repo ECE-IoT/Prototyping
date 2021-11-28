@@ -9,7 +9,7 @@
 class AWS
 {
 private:
-  MQTTClient mqtt_client      = MQTTClient(1024);
+  MQTTClient mqtt_client = MQTTClient(1024);
   WiFiClientSecure tls_client = WiFiClientSecure();
   Keys keys;
 
@@ -18,7 +18,7 @@ private:
 
 public:
   void begin(char endpoint[], uint16_t port, char device_name[]);
-  void publish(char topic[], const char* payload);
+  void publish(char topic[], const char *payload);
   void subscribe(char topic[]);
 };
 

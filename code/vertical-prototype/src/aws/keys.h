@@ -6,16 +6,16 @@
 class Keys
 {
 private:
-  char* getKey(String path);
-  char* private_key_;
-  char* device_cert_;
-  char* root_ca_;
+  char *getKey(String path);
+  char *private_key_;
+  char *device_cert_;
+  char *root_ca_;
 
 public:
   void begin(void);
-  char* getPrivateKey();
-  char* getDeviceCert();
-  char* getRootCA();
+  char *getPrivateKey();
+  char *getDeviceCert();
+  char *getRootCA();
 };
 
 #endif

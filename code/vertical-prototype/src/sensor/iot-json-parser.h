@@ -11,7 +11,7 @@ private:
   char json_buffer[100];
 
 public:
-  char* parseData(char sensor_type[], char unit[], float value);
+  char *parseData(char sensor_type[], char unit[], float value);
 };
 
 #endif

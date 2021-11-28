@@ -2,6 +2,7 @@
 
 void AWS::begin(char endpoint[], uint16_t port, char device_name[])
 {
+  dev_name = device_name;
   keys.begin();
   configureTLSClient();
   configureMQTTClient(endpoint, port, device_name);
@@ -31,6 +32,10 @@ void AWS::configureMQTTClient(char endpoint[], uint16_t port, char device_name[]
 
 void AWS::publish(char topic[], const char *payload)
 {
+  while (!mqtt_client.connect(dev_name))
+  {
+    delay(100);
+  }
   mqtt_client.publish(topic, payload);
   mqtt_client.loop();
 }

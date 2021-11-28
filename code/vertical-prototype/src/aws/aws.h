@@ -12,6 +12,7 @@ private:
   MQTTClient mqtt_client = MQTTClient(1024);
   WiFiClientSecure tls_client = WiFiClientSecure();
   Keys keys;
+  char *dev_name;
 
   void configureTLSClient(void);
   void configureMQTTClient(char endpoint[], uint16_t port, char device_name[]);

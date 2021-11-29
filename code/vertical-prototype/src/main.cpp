@@ -21,7 +21,7 @@ void setup()
 
   //----------- init wifi -----------
   WiFi.mode(WIFI_STA);
-  WiFi.begin(HOME_SSID, HOME_PW);
+  WiFi.begin(FH_SSID, FH_PW);
   Serial.println("Connecting to WiFi");
 
   while (WiFi.status() != WL_CONNECTED)

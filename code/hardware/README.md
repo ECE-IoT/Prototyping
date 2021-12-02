@@ -10,6 +10,17 @@ For this sensor, you need a JST PH 4-Pin Connector to connect it to the ESP32.
 ## VEML7700 Brighntess Sensor
 For this sensor, you have to solder a 5-pin-array to the PCB. After this, you can connect the sensor with jumper wire to the ESP32.
 
+Examples of typical brightness levels in lux:
+
+- at night: 0.5
+- street lighting: 10
+- living room: 50
+- hall lighting: 100
+- office room: 500
+- overcast Himmel: 5000
+- daylight: 10000
+- bright sky: 20000
+
 ## Schematic
 
 In the picture below you can see how the sensors are connected to the ESP32. The ESP32 itselfs needs a USB-B micro cable for connection to the PC.

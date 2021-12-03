@@ -10,6 +10,10 @@
 #define integration_time 400 // in ms
 #define soil_moisture_level_low 1023
 #define soil_moisture_level_high 314
+#define DHTTYPE DHT22   
+#define DHTPIN 2   
+
+
 
 class VEML7700
 {

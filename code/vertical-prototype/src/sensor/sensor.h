@@ -32,7 +32,7 @@ public:
     int readMoisture();
 };
 
-class DHT22
+class DHT_Sensor
 {
 private:
     char dht_type_;
@@ -40,7 +40,7 @@ private:
     DHT dht;
 
 public:
-    DHT22(char type, char pin);
+    DHT_Sensor(char type, char pin);
     void beginDHT22();
     float readTempDHT22();
     float readHumDHT22();

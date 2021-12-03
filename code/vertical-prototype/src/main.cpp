@@ -5,12 +5,15 @@
 #include <Arduino.h>
 
 #define MEAS_DELAY 60000
+#define DHTTYPE 22
+#define DHTPIN 2
 
 AWS aws;
 Parser parser;
 VEML7700 sensor_1;
 SoilMoisture sensor_2;
-DHT22 sensor_3;
+DHT_Sensor sensor_3 = DHT_Sensor(DHTTYPE, DHTPIN);
+
 
 char *payload;
 float value;

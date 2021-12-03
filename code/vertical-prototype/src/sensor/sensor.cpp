@@ -47,26 +47,26 @@ int SoilMoisture::readMoisture()
     return moisture_value;
 }
 
-DHT22::DHT22(char type, char pin)
+DHT_Sensor::DHT_Sensor(char type, char pin)
 {
     dht_type_ = type;
     dht_pin_ = pin;
     dht = DHT(dht_pin_, dht_type_);
 }
 
-void DHT22::beginDHT22()
+void DHT_Sensor::beginDHT22()
 {
     dht.begin();
 }
 
-float DHT22::readTempDHT22()
+float DHT_Sensor::readTempDHT22()
 {
-    temp = dht.readTemperature();
+   float temp = dht.readTemperature();
     return temp;
 }
 
-float DHT22::readHumDHT22()
+float DHT_Sensor::readHumDHT22()
 {
-    hum = dht.readHumidity();
+    float hum = dht.readHumidity();
     return hum;
 }

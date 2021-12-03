@@ -10,10 +10,6 @@
 #define integration_time 400 // in ms
 #define soil_moisture_level_low 1023
 #define soil_moisture_level_high 314
-#define DHTTYPE DHT22   
-#define DHTPIN 2   
-
-
 
 class VEML7700
 {
@@ -38,12 +34,16 @@ public:
 
 class DHT22
 {
-    private:
-        DHT dht(DHTPIN, DHTTYPE);
+private:
+    char dht_type_;
+    char dht_pin_;
+    DHT dht;
 
-    public:
-        void beginDHT22();
-        float readTempDHT22();
-        float readHumDHT22();
-}
+public:
+    DHT22(char type, char pin);
+    void beginDHT22();
+    float readTempDHT22();
+    float readHumDHT22();
+};
+
 #endif

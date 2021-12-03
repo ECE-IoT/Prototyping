@@ -47,6 +47,13 @@ int SoilMoisture::readMoisture()
     return moisture_value;
 }
 
+DHT22::DHT22(char type, char pin)
+{
+    dht_type_ = type;
+    dht_pin_ = pin;
+    dht = DHT(dht_pin_, dht_type_);
+}
+
 void DHT22::beginDHT22()
 {
     dht.begin();

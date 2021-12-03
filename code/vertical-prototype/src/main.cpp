@@ -10,6 +10,7 @@ AWS aws;
 Parser parser;
 VEML7700 sensor_1;
 SoilMoisture sensor_2;
+DHT22 sensor_3;
 
 char *payload;
 float value;
@@ -32,6 +33,7 @@ void setup()
   //---------------------------------
   sensor_1.beginVEML7700();
   sensor_2.beginSoilMoisture();
+  sensor_3.beginDHT22();
   aws.begin("aq60dkt3q20bd-ats.iot.eu-central-1.amazonaws.com", 8883, "esp32-d1mini-01");
   aws.subscribe("esp32/sub");
   delay(500);
@@ -48,17 +50,30 @@ void loop()
     aws.publish("esp32/pub", payload);
     //--------------------------------
 
-    //----------- SoilMoisture ----------- 
+    //----------- SoilMoisture -------
     value = sensor_2.readTemp();
     payload = parser.parseData("SoilMoisture", "°C", value);
     aws.publish("esp32/pub", payload);
     //--------------------------------
 
-    //----------- SoilMoisture ----------- 
+    //----------- SoilMoisture -------
     value = sensor_2.readMoisture();
     payload = parser.parseData("SoilMoisture", "%", value);
     aws.publish("esp32/pub", payload);
     //--------------------------------
+
+    //----------- DHT22 ----------- 
+    value = sensor_3.readTempDHT22();
+    payload = parser.parseData("DHT22", "°C", value);
+    aws.publish("esp32/pub", payload);
+    //--------------------------------
+
+    //----------- DHT22 ------------- 
+    value = sensor_3.readHumDHT22();
+    payload = parser.parseData("DHT22", "%", value);
+    aws.publish("esp32/pub", payload);
+    //--------------------------------
+
     last_meas = millis();
   }
 }

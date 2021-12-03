@@ -46,3 +46,20 @@ int SoilMoisture::readMoisture()
     int moisture_value = map(capacity, soil_moisture_level_low, soil_moisture_level_high, 100, 0);
     return moisture_value;
 }
+
+void DHT22::beginDHT22()
+{
+    dht.begin();
+}
+
+float DHT22::readTempDHT22()
+{
+    temp = dht.readTemperature();
+    return temp;
+}
+
+float DHT22::readHumDHT22()
+{
+    hum = dht.readHumidity();
+    return hum;
+}

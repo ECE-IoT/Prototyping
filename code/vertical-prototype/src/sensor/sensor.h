@@ -4,6 +4,7 @@
 #include "Arduino.h"
 #include "Adafruit_VEML7700.h"
 #include "Adafruit_seesaw.h"
+#include <DHT.h>
 
 #define gain 10
 #define integration_time 400 // in ms
@@ -31,4 +32,14 @@ public:
     int readMoisture();
 };
 
+class DHT22
+{
+    private:
+        DHT dht(DHTPIN, DHTTYPE);
+
+    public:
+        void beginDHT22();
+        float readTempDHT22();
+        float readHumDHT22();
+}
 #endif

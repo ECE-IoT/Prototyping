@@ -14,7 +14,6 @@ VEML7700 sensor_1;
 SoilMoisture sensor_2;
 DHT_Sensor sensor_3 = DHT_Sensor(DHTTYPE, DHTPIN);
 
-
 char *payload;
 float value;
 

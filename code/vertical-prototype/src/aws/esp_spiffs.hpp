@@ -9,11 +9,8 @@ class ESP_SPIFFS
   public:
     ESP_SPIFFS();
     char* readSpiffs(String path);
-    void appendLog(String message);
-
-  private:
-    String log_file_name = "log_file"; // eventuell auch ins config file 
-
+    void appendLog(String message, String path);
+    void createFile(String path);
 };
 
 #endif

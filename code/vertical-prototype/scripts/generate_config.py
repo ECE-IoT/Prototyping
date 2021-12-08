@@ -3,7 +3,7 @@ import os.path
 import json
 
 dir_path = os.path.normpath(os.path.join(__file__, '..' , '..' , 'data'))
-file_path = os.path.join(dir_path, 'log_file.json')
+file_path = os.path.join(dir_path, 'config_file.json')
 
 ## get user input-----------------------------------------
 ssid = input("Enter wifi ssid: ")
@@ -19,7 +19,7 @@ json_dict = {
   "mqtt_topic":"esp32-d1mini-01"
 }
 
-file_data = json.dumps(json_dict, indent=0) # indent adds newlines
+file_data = json.dumps(json_dict, indent=0)
 
 ## write to file------------------------------------------
 if not os.path.exists(dir_path):

@@ -7,7 +7,7 @@
 class ESP_SPIFFS
 {
   public:
-    ESP_SPIFFS();
+    void spiffsBeginn();
     char* readSpiffs(String path);
     void appendLog(String message, String path);
     void createFile(String path);

@@ -1,6 +1,6 @@
 #include "esp_spiffs.hpp"
 
-ESP_SPIFFS::ESP_SPIFFS()
+void ESP_SPIFFS::spiffsBeginn()
 {
   if (!SPIFFS.begin(true))
   {
@@ -15,7 +15,7 @@ char* ESP_SPIFFS::readSpiffs(String path)
 
   if (!file)
   {
-    return (char *)"\0"; // Error Handling überlegen
+    return (char *)"\0";
   }
   size_t size = file.size();
   char *file_content = (char *)malloc((size + 1) * sizeof(char));

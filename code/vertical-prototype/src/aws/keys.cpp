@@ -7,9 +7,9 @@ void Keys::begin()
   //   Serial.println("An Error has occurred while mounting SPIFFS"); // Maybe implement a better error handling
   //   return;
   // }
-
-  private_key_ = spiffs.readSpiffs("/esp32-d1mini-01.private.key"); // if we use a config file to configure the wifi we could
-                                                         // also store these paths ther
+  
+  spiffs.spiffsBeginn();
+  private_key_ = spiffs.readSpiffs("/esp32-d1mini-01.private.key");
   device_cert_ = spiffs.readSpiffs("/esp32-d1mini-01.cert.pem");
   root_ca_ = spiffs.readSpiffs("/root-CA.crt");
 }

@@ -3,7 +3,7 @@
 #include<Arduino.h>
 #include <ArduinoJson.h>
 #include "esp_spiffs.hpp"
-
+#define CONFIG_FILE "/config_file.json"
 /*------??
 TODO Macht hier der zugriff über get Funktionen so Sinn, weil wir ja durch die Übergabe des Arrays ja erst wieder zugriff auf die privat Daten geben?
 */

@@ -1,14 +1,17 @@
-#include "../secrets/wifi-secrets.h"
+//#include "../secrets/wifi-secrets.h"
+#include "aws/esp_config.hpp"
 #include "aws/aws.h"
+#include "aws/esp_wifi.hpp"
+#include "aws/esp_logger.hpp"
 #include "sensor/sensor.h"
 #include "sensor/iot-json-parser.h"
 #include <Arduino.h>
+#include <WiFiClientSecure.h>
 
 #define MEAS_DELAY 60000
 #define DHTTYPE 22
 #define DHTPIN 2
 
-AWS aws;
 Parser parser;
 VEML7700 sensor_1;
 SoilMoisture sensor_2;
@@ -16,28 +19,33 @@ DHT_Sensor sensor_3 = DHT_Sensor(DHTTYPE, DHTPIN);
 
 char *payload;
 float value;
-
+AWS aws;
+  
 void setup()
 {
   Serial.begin(9600);
   Serial.println("Start");
 
-  //----------- init wifi -----------
-  WiFi.mode(WIFI_STA);
-  WiFi.begin(FH_SSID, FH_PW);
-  Serial.println("Connecting to WiFi");
+  ESP_CONFIG conf;
+  ESP_WIFI wifi(conf.getWifiSSID(),conf.getWifiPWSD());
+  ESP_LOGGER logger;
 
-  while (WiFi.status() != WL_CONNECTED)
-  {
-    delay(500);
-    Serial.println(".");
-  }
+  logger.logBegin();
+  wifi.beginWifi();
+  
+  Serial.println("Connected");
+  logger.logInfo("wifi connected"); // only here until framework definition
+ 
   //---------------------------------
   sensor_1.beginVEML7700();
   sensor_2.beginSoilMoisture();
   sensor_3.beginDHT22();
-  aws.begin("aq60dkt3q20bd-ats.iot.eu-central-1.amazonaws.com", 8883, "esp32-d1mini-01");
+
+  aws.begin(conf.getAwsUrl(), conf.getAwsPort(), conf.getMqttTopic());
+  logger.logInfo("aws connectedd");// only here until framework definition
+
   aws.subscribe("esp32/sub");
+  logger.logInfo("aws subscribed");// only here until framework definition
   delay(500);
 }
 

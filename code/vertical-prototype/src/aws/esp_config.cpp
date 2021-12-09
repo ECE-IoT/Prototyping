@@ -2,7 +2,8 @@
 
 ESP_CONFIG::ESP_CONFIG()
 {
-  char* json_file = spiffs.readSpiffs("/config_file.json");
+  spiffs.spiffsBeginn();
+  char* json_file = spiffs.readSpiffs(CONFIG_FILE);
   DynamicJsonDocument doc(1024);
   deserializeJson(doc, json_file);
 

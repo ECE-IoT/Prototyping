@@ -28,6 +28,6 @@ void loop()
   Serial.print(soil_moisture_percent);
   Serial.println(" %");
   Serial.println("");
-  
+
   delay(2000);
 }

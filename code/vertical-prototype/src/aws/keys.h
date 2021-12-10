@@ -2,20 +2,21 @@
 #define VERT_PROT_KEYS
 
 #include <Arduino.h>
-
+#include <SPIFFS.h>
+#include "esp_spiffs.hpp"
 class Keys
 {
 private:
-  char* getKey(String path);
-  char private_key_[];
-  char device_key_[];
-  char root_ca_[];
+  char *private_key_;
+  char *device_cert_;
+  char *root_ca_;
+  EspSpiffs spiffs;
 
 public:
-  Keys();
-  char getPrivateKey();
-  char getDeviceKey();
-  char getRootCA();
-}
+  void begin(void);
+  char *getPrivateKey();
+  char *getDeviceCert();
+  char *getRootCA();
+};
 
 #endif

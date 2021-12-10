@@ -1,27 +1,22 @@
 #include "aws.h"
-#include "keys.h"
-#include <Arduino.h>
-#include <ArduinoJson.hpp>
-#include <MQTTClient.h>
-#include <WiFiClientSecure.h>
 
-AWS::AWS(String endpoint[], uint16_t port, String device_name[])
+void AWS::begin(char endpoint[], uint16_t port, char device_name[])
 {
+  dev_name = device_name;
+  keys.begin();
   configureTLSClient();
-  configureMQTTClient();
+  configureMQTTClient(endpoint, port, device_name);
 }
 
-AWS::configureTLSClient()
+void AWS::configureTLSClient()
 {
-  tls_client = WiFiClientSecure();
   tls_client.setCACert(keys.getRootCA());
   tls_client.setPrivateKey(keys.getPrivateKey());
-  tls_client.setCertificate(keys.getDeviceKey());
+  tls_client.setCertificate(keys.getDeviceCert());
 }
 
-AWS::configureMQTTClient(String endpoint[], uint16_t port, String device_name[])
+void AWS::configureMQTTClient(char endpoint[], uint16_t port, char device_name[])
 {
-  mqtt_client = MQTTClient(265); // 265 = buffer size
   mqtt_client.begin(endpoint, port, tls_client);
 
   while (!mqtt_client.connect(device_name))
@@ -33,4 +28,19 @@ AWS::configureMQTTClient(String endpoint[], uint16_t port, String device_name[])
   {
     return;
   }
+}
+
+void AWS::publish(char topic[], const char *payload)
+{
+  while (!mqtt_client.connect(dev_name))
+  {
+    delay(100);
+  }
+  mqtt_client.publish(topic, payload);
+  mqtt_client.loop();
+}
+
+void AWS::subscribe(char topic[])
+{
+  mqtt_client.subscribe(topic);
 }

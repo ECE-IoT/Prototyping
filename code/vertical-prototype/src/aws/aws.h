@@ -3,26 +3,24 @@
 
 #include "keys.h"
 #include <Arduino.h>
-#include <ArduinoJson.hpp>
-#include <MQTTClient.h>
+#include <MQTT.h>
 #include <WiFiClientSecure.h>
-
-using namespace std;
 
 class AWS
 {
 private:
-  MQTTClient mqtt_client;
-  WiFiClientSecure tls_client;
-  Keys key;
+  MQTTClient mqtt_client = MQTTClient(1024);
+  WiFiClientSecure tls_client = WiFiClientSecure();
+  Keys keys;
+  char *dev_name;
 
   void configureTLSClient(void);
-  void configureMQTTClient(String endpoint[], uint16_t port, String device_name[]);
+  void configureMQTTClient(char endpoint[], uint16_t port, char device_name[]);
 
 public:
-  AWS(String endpoint[], uint16_t port, String device_name[]);
-  void publish(String topic, int payload);
-  void subscribe(String topic, function<> callbackHandler);
-}
+  void begin(char endpoint[], uint16_t port, char device_name[]);
+  void publish(char topic[], const char *payload);
+  void subscribe(char topic[]);
+};
 
 #endif

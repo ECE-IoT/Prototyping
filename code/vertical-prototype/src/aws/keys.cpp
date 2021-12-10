@@ -1,29 +1,24 @@
 #include "keys.h"
-#include <Arduino.h>
 
-Keys::Keys()
+void Keys::begin()
 {
-  this->private_key_ = getKey("PrivatePath");
-  this->device_key_  = getKey("DevicePath");
-  this->root_ca_     = getKey("RootCAPath");
+  spiffs.spiffsBeginn();
+  private_key_ = spiffs.readSpiffs("/esp32-d1mini-01.private.key");
+  device_cert_ = spiffs.readSpiffs("/esp32-d1mini-01.cert.pem");
+  root_ca_ = spiffs.readSpiffs("/root-CA.crt");
 }
 
-Keys::getPrivateKey()
+char *Keys::getPrivateKey()
 {
   return private_key_;
 }
 
-Keys::getDeviceKey()
+char *Keys::getDeviceCert()
 {
-  return device_key_;
+  return device_cert_;
 }
 
-Keys::getPrivateKey()
+char *Keys::getRootCA()
 {
   return root_ca_;
-}
-
-Keys::getKey(String path)
-{
-  // read SPIFFS
 }

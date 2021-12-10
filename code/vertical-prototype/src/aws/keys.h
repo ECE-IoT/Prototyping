@@ -7,11 +7,10 @@
 class Keys
 {
 private:
-  // char *getKey(String path);
   char *private_key_;
   char *device_cert_;
   char *root_ca_;
-  ESP_SPIFFS spiffs;
+  EspSpiffs spiffs;
 
 public:
   void begin(void);

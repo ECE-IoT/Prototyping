@@ -26,15 +26,14 @@ void setup()
   Serial.begin(9600);
   Serial.println("Start");
 
-  ESP_CONFIG conf;
-  ESP_WIFI wifi(conf.getWifiSSID(),conf.getWifiPWSD());
-  ESP_LOGGER logger;
+  EspConfig conf;
+  EspWifi wifi(conf.getWifiSSID(),conf.getWifiPWSD());
+  EspLogger logger;
 
   logger.logBegin();
   wifi.beginWifi();
   
-  Serial.println("Connected");
-  logger.logInfo("wifi connected"); // only here until framework definition
+  logger.logInfo("wifi connected");
  
   //---------------------------------
   sensor_1.beginVEML7700();
@@ -42,10 +41,10 @@ void setup()
   sensor_3.beginDHT22();
 
   aws.begin(conf.getAwsUrl(), conf.getAwsPort(), conf.getMqttTopic());
-  logger.logInfo("aws connectedd");// only here until framework definition
+  logger.logInfo("aws connectedd");
 
   aws.subscribe("esp32/sub");
-  logger.logInfo("aws subscribed");// only here until framework definition
+  logger.logInfo("aws subscribed");
   delay(500);
 }
 

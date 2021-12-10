@@ -1,6 +1,6 @@
 #include "esp_config.hpp"
 
-ESP_CONFIG::ESP_CONFIG()
+EspConfig::EspConfig()
 {
   spiffs.spiffsBeginn();
   char* json_file = spiffs.readSpiffs(CONFIG_FILE);
@@ -14,27 +14,27 @@ ESP_CONFIG::ESP_CONFIG()
   aws_port = doc["aws_port"];
 }
 
-char* ESP_CONFIG::getWifiSSID()
+char* EspConfig::getWifiSSID()
 {
   return wifi_ssid;
 }
 
-char* ESP_CONFIG::getWifiPWSD()
+char* EspConfig::getWifiPWSD()
 {
   return wifi_pswd;
 }
 
-char* ESP_CONFIG::getMqttTopic()
+char* EspConfig::getMqttTopic()
 {
   return mqtt_topic;
 }
 
-char* ESP_CONFIG::getAwsUrl()
+char* EspConfig::getAwsUrl()
 {
   return aws_url;
 }
 
-int ESP_CONFIG::getAwsPort()
+int EspConfig::getAwsPort()
 {
   return aws_port;
 }

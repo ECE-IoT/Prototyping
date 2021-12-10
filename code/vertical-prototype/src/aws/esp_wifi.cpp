@@ -1,35 +1,31 @@
 #include "esp_wifi.hpp"
 
-ESP_WIFI::ESP_WIFI(char* wifi_ssid, char* wifi_pswd)
+EspWifi::EspWifi(char* wifi_ssid, char* wifi_pswd)
 {
   ssid = wifi_ssid;
   pswd = wifi_pswd;
 }
 
-void ESP_WIFI::beginWifi()
+void EspWifi::beginWifi()
 {
   WiFi.mode(WIFI_STA);
   WiFi.begin(ssid, pswd);
 
   while (WiFi.status() != WL_CONNECTED)
   {
-    //------!!!!!!!
-    //TODO include writing to log file by timeout
   }
 }
 
-void ESP_WIFI::reconnectWifi()
+void EspWifi::reconnectWifi()
 {
   WiFi.reconnect();
 
   while (WiFi.status() != WL_CONNECTED)
   {
-    //------!!!!!!!
-    //TODO include writing to log file by timeout
   }
 }
 
-wl_status_t ESP_WIFI::statusWifi()
+wl_status_t EspWifi::statusWifi()
 {
   return WiFi.status();
 }

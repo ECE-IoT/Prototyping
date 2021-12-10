@@ -4,7 +4,7 @@
 #include <Arduino.h>
 #include <SPIFFS.h>
 
-class ESP_SPIFFS
+class EspSpiffs
 {
   public:
     void spiffsBeginn();

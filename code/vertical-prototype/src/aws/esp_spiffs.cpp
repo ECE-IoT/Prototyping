@@ -1,15 +1,14 @@
 #include "esp_spiffs.hpp"
 
-void ESP_SPIFFS::spiffsBeginn()
+void EspSpiffs::spiffsBeginn()
 {
   if (!SPIFFS.begin(true))
   {
-    Serial.println("An Error has occurred while mounting SPIFFS"); // Maybe implement a better error handling
     return;
   }
 }
 
-char* ESP_SPIFFS::readSpiffs(String path)
+char* EspSpiffs::readSpiffs(String path)
 {
   File file = SPIFFS.open(path);
 
@@ -27,26 +26,26 @@ char* ESP_SPIFFS::readSpiffs(String path)
   return file_content;
 }
 
-void ESP_SPIFFS::appendLog(String message, String path)
+void EspSpiffs::appendLog(String message, String path)
 {
   File file = SPIFFS.open(path, "a");
 
   if (!file)
   {
-   // Error Handling überlegen
+    return;
   }
 
   file.println(message);
   file.close();
 }
 
-void ESP_SPIFFS::createFile(String path)
+void EspSpiffs::createFile(String path)
 {
   File file = SPIFFS.open(path, "w+");
 
   if (!file)
   {
-   // Error Handling überlegen
+    return;
   }
   file.print("");
   file.close();

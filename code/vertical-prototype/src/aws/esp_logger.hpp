@@ -5,10 +5,10 @@
 
 #define LOG_FILE "/log_file.txt"
 
-class ESP_LOGGER
+class EspLogger
 {
   public:
-  ESP_SPIFFS spiffs;
+  EspSpiffs spiffs;
   void logBegin();
   void logError(String message);
   void logInfo(String message);

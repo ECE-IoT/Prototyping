@@ -4,11 +4,8 @@
 #include <ArduinoJson.h>
 #include "esp_spiffs.hpp"
 #define CONFIG_FILE "/config_file.json"
-/*------??
-TODO Macht hier der zugriff über get Funktionen so Sinn, weil wir ja durch die Übergabe des Arrays ja erst wieder zugriff auf die privat Daten geben?
-*/
 
-class ESP_CONFIG
+class EspConfig
 {
   private:
     char* aws_url;
@@ -16,10 +13,10 @@ class ESP_CONFIG
     char* wifi_ssid;
     char* wifi_pswd;
     int aws_port;
-    ESP_SPIFFS spiffs;
+    EspSpiffs spiffs;
 
   public:
-    ESP_CONFIG();
+    EspConfig();
     char* getWifiSSID();
     char* getWifiPWSD();
     char* getMqttTopic();
